@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* Common Style Variables */
+
+  /* Color */
+  --color-black: #000;
+  --color-blueviolet: #8a38f5;
+  --color-darkslategray: #333;
+  --color-gray: #060606;
+  --color-lightskyblue: #65bdf1;
+  --color-steelblue: #338abd;
+  --color-white: #fff;
+
+  /* Padding */
+  --padding-15: 15px;
+
+  /* BorderRadius */
+  --br-20: 20px;
+
+  /* Font */
+  --font-judson: Judson;
+  --font-prosto-one: Prosto One;
+
+  /* FontSize */
+  --fs-20: 20px;
+  --fs-64: 64px;
+
+  /* Shadows */
+  --shadow-drop: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  --text-shadow-1: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* WidthHeights */
+  --height-64: 64px;
+  --width-64: 64px;
+
+  --left-0: 0px;
+  --top-0: 0px;
+}
