@@ -1,0 +1,24 @@
+.newwingstransparent1Icon,
+.newwingstransparent1Icon2 {
+  position: absolute;
+  box-shadow: var(--shadow-drop);
+  object-fit: cover;
+}
+.newwingstransparent1Icon {
+  top: -16px;
+  left: 63px;
+  width: 271px;
+  height: 271px;
+  flex-shrink: 0;
+}
+.newwingstransparent1Icon2 {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}

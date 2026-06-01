@@ -1,0 +1,287 @@
+.iphone171 {
+  width: 100%;
+  height: 3000px;
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(53, 53, 53, 0.06), rgba(90, 125, 221, 0.3)),
+    linear-gradient(#444, #444);
+  overflow: hidden;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--fs-64);
+  color: var(--color-white);
+  font-family: var(--font-prosto-one);
+}
+.mergedAsset1Icon {
+  position: absolute;
+  top: 0;
+  left: -348px;
+  width: 922px;
+  height: 1139px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.dji202509280809320057D2Icon,
+.droneIcon,
+.maskGroupIcon {
+  position: absolute;
+  top: 621px;
+  left: 0;
+  width: 922px;
+  height: 518px;
+  object-fit: cover;
+}
+.droneIcon,
+.maskGroupIcon {
+  top: 0;
+  left: 182px;
+  width: 735px;
+  height: 712px;
+}
+.droneIcon {
+  top: 46px;
+  left: 425px;
+  width: 480px;
+  height: 480px;
+}
+.unionIcon {
+  position: absolute;
+  top: 627px;
+  left: 513px;
+  width: 71.7px;
+  height: 130.6px;
+}
+.me {
+  top: 872px;
+  left: 468px;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  width: 96px;
+  height: 67.7px;
+}
+.me,
+.me2,
+.meChild {
+  position: absolute;
+}
+.me2 {
+  top: 7.9px;
+  left: 0;
+  font-size: var(--fs-20);
+  font-family: var(--font-prosto-one);
+  color: var(--color-white);
+  text-align: left;
+  transform: rotate(-5.4deg);
+  transform-origin: 0 0;
+}
+.meChild {
+  top: 8px;
+  left: 49px;
+  width: 47px;
+  height: 5px;
+  object-fit: contain;
+}
+.navBar {
+  top: 774px;
+  left: 399px;
+  width: 301px;
+  height: 66px;
+}
+.base,
+.menu,
+.navBar {
+  position: absolute;
+}
+.base {
+  width: 100%;
+  top: -1px;
+  right: 1px;
+  left: -1px;
+  box-shadow:
+    -11.2px -10.4px 48px -12px rgba(0, 0, 0, 0.15),
+    -1.9px -1.7px 12px -8px rgba(0, 0, 0, 0.15),
+    1.9px 1.8px 8.1px rgba(255, 255, 255, 0.15) inset,
+    1px 0.9px 4.1px rgba(255, 255, 255, 0.15) inset;
+  backdrop-filter: blur(5.1px);
+  border-radius: 100px;
+  background:
+    rgba(255, 255, 255, 0.1) padding-box,
+    conic-gradient(
+        from 90deg at 50% 50%,
+        rgba(255, 255, 255, 0) -47.02deg,
+        rgba(255, 255, 255, 0.4) 42.98deg,
+        rgba(255, 255, 255, 0) 132.98deg,
+        rgba(255, 255, 255, 0.4) 222.98deg,
+        rgba(255, 255, 255, 0) 312.98deg,
+        rgba(255, 255, 255, 0.4) 402.98deg
+      )
+      border-box;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  height: 100%;
+}
+.menu {
+  width: calc(100% - 2px);
+  top: 0;
+  right: 2px;
+  left: 0;
+  height: var(--height-64);
+}
+.bookingsIcon,
+.homeIcon {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  max-height: 100%;
+  width: var(--width-64);
+}
+.bookingsIcon {
+  left: 117.5px;
+}
+.portfolioIcon {
+  position: absolute;
+  left: 235px;
+}
+.portfolioIcon,
+.sliderIcon,
+.sliderIcon3 {
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  max-height: 100%;
+  width: var(--width-64);
+}
+.sliderIcon {
+  position: absolute;
+  left: 117px;
+}
+.sliderIcon3 {
+  left: 236px;
+}
+.okIcon,
+.slider,
+.sliderIcon3 {
+  position: absolute;
+}
+.slider {
+  top: 392px;
+  left: 289px;
+  border-radius: 5px;
+  border: 1px dashed var(--color-blueviolet);
+  box-sizing: border-box;
+  width: 104px;
+  height: 170px;
+  overflow: hidden;
+  display: none;
+  flex-shrink: 0;
+}
+.okIcon {
+  top: 20px;
+  left: 20px;
+  width: var(--width-64);
+  height: var(--height-64);
+}
+.property1shadIcon {
+  position: absolute;
+  top: calc(50% + 9px);
+  left: calc(50% - 35px);
+  width: 70px;
+  height: 70px;
+}
+.maskGroupIcon2 {
+  position: absolute;
+  bottom: 767px;
+  left: -48px;
+  width: 497px;
+  height: 896px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.blurb1,
+.text {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.blurb1 {
+  position: absolute;
+  top: 1132px;
+  left: calc(50% - 590px);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 60, 1, 0.2) 10.05%,
+      rgba(138, 182, 68, 0.2)
+    ),
+    linear-gradient(#595959, #595959);
+  width: 1192px;
+  justify-content: center;
+  padding: 45px 30px;
+  flex-shrink: 0;
+  font-size: var(--fs-20);
+  font-family: var(--font-judson);
+}
+.text {
+  flex: 1;
+  border-radius: var(--br-20);
+  background-color: var(--color-gray);
+  padding: 33.5px var(--padding-15) 30.5px;
+  max-width: 348px;
+}
+.licensedAndInsured {
+  flex: 1;
+  position: relative;
+}
+.getTheShot {
+  margin: 0;
+  top: 202px;
+  left: 11px;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  text-shadow: var(--text-shadow-1);
+}
+.book,
+.getTheShot,
+.makeJawsDrop {
+  position: absolute;
+  flex-shrink: 0;
+}
+.makeJawsDrop {
+  margin: 0;
+  bottom: 1349px;
+  left: 13px;
+  font-size: inherit;
+  font-weight: 400;
+  font-family: inherit;
+  text-shadow: var(--text-shadow-1);
+}
+.book {
+  top: 512px;
+  left: 83px;
+  box-shadow:
+    0 4px 4px rgba(0, 0, 0, 0.25),
+    5px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: var(--br-20);
+  background-color: var(--color-lightskyblue);
+  border: 5px solid var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-15) 35px var(--padding-15) 34px;
+  white-space: nowrap;
+}
+.bookToday {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: relative;
+  font-size: 24px;
+  font-family: var(--font-prosto-one);
+  color: var(--color-white);
+  text-align: center;
+  display: inline-block;
+}
