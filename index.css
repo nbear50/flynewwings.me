@@ -24,7 +24,7 @@ body {
 /* Enlarged Logo Mark */
 .logo-mark {
   position: fixed;
-  top: 5px;
+  top: -70px;
   left: 20px;
   width: 320px;
   height: 320px;
@@ -43,9 +43,9 @@ body {
 
 .logo-mark.scroll-active,
 .logo-mark.force-active {
-  width: 80px;
-  height: 80px;
-  top: 16px;
+  width: 200px;
+  height: 200px;
+  top: -39px;
   left: 16px;
 }
 
@@ -314,11 +314,10 @@ body {
 }
 
 .equipment-label {
-  font-family: var(--font-judson);
+  font-family: var(--font-prosto-one);
   font-size: clamp(2.5rem, 5vw, 4rem);
   color: var(--color-lightskyblue);
   letter-spacing: 4px;
-  text-transform: uppercase;
   font-weight: 400;
   text-align: center;
   margin: 0 0 40px 0;
@@ -654,14 +653,16 @@ body {
     width: 100%;
     text-align: center; 
   }
-  .hero-title { font-size: clamp(2.5rem, 7vw, 4rem); }
+  .hero-title { font-size: clamp(3rem, 7vw, 4rem); }
   .hero-subtitle { display: none; }
   .hero-cta-group { 
-    margin-top: auto; 
+    margin-top: 265px; 
     justify-content: center; 
-    gap: 16px; 
+    gap: 16px;
+    width: 50%;
   }
-  .cta-primary, .cta-secondary { min-width: 140px; padding: 14px 24px; font-size: 0.95rem; }
+  }
+  .cta-primary, .cta-secondary { min-width: 120px; padding: 14px 24px; font-size: 0.95rem; }
   
   .company-intro { padding: 30px; }
   .about-section { padding: 20px 30px; }
@@ -673,11 +674,11 @@ body {
   .avata-image img { transform: none; width: 100%; } 
   .lightbox-prev { left: 10px; }
   .lightbox-next { right: 10px; }
-}
+
 
 @media (max-width: 480px) {
-  .logo-mark { width: 180px; height: 180px; }
-  .hero-content { padding: 120px 20px 30px; } 
+  .logo-mark { width: 200px; height: 200px; top: -45px; left: 50%; transform: translateX(-50%); }
+  .hero-content { padding: 100px 20px 30px; } 
   .hero-title { font-size: clamp(2rem, 6vw, 3.5rem); line-height: 0.9; }
   .hero-cta-group { flex-direction: column; width: 100%; gap: 12px; }
   .cta-primary, .cta-secondary { width: 100%; padding: 14px 20px; }
