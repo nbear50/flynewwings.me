@@ -28,7 +28,9 @@
     <div class="blob blob-4"></div>
 
     <div class="logo-mark">
-      <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
+     <a href="index.html">
+       <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
+       </a>
     </div>
 
     <div class="app-container">
@@ -80,7 +82,7 @@
     
     <a href="estate.html" class="service-square">
       <img src="./public/Services/realestate.webp" alt="Real Estate" class="service-bg">
-      <video src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/Real%20Estate/RealEstate.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
+      <video src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/Real%20Estate/RealEstate.mp4" muted loop playsinline class="service-video"></video>
       <h3 class="service-label">Real Estate</h3>
     </a>
 
@@ -176,9 +178,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </a>
           </div>
-          <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach</p>
-          <p class="footer-credit">Email me at newwingsdrones@gmail.com for any inquiries.</p>
-          <p class="footer-credit">Made with love by Noel Wittenbach</p>
+          <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach<br>Email me at newwingsdrones@gmail.com for any inquiries.<br>Made with love by Noel Wittenbach</p>
         </div>
 
       </div>
@@ -222,6 +222,27 @@
 
       window.addEventListener('scroll', updateNavVisibility);
       updateNavVisibility();
+
+      // Video hover play/pause logic
+const serviceSquares = document.querySelectorAll('.service-square');
+
+serviceSquares.forEach(square => {
+  const video = square.querySelector('.service-video');
+  
+  if (video) {
+    // Play when mouse enters the square
+    square.addEventListener('mouseenter', () => {
+      video.play().catch(e => console.log("Video play interrupted:", e));
+    });
+    
+    // Pause when mouse leaves
+    square.addEventListener('mouseleave', () => {
+      video.pause();
+      // Optional: uncomment the line below if you want the video to restart from the beginning every time
+      // video.currentTime = 0; 
+    });
+  }
+});
     </script>
   </body>
 </html>

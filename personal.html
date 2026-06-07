@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FNQMYSM7L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7FNQMYSM7L');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prosto+One:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
+    <title>Personal Projects - NEW Wings</title>
+    <link rel="icon" type="image/png" href="./public/NEWWingsTransparent-1@2x.png" />
+    <style>
+      .service-hero {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        padding: 0 20px;
+      }
+      .pricing-banner {
+        background: rgba(18, 24, 41, 0.6);
+        border: 1px solid rgba(101, 189, 241, 0.2);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 40px auto 20px;
+        max-width: 800px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      .promo-banner {
+        background: linear-gradient(135deg, rgba(255, 59, 59, 0.15), rgba(18, 24, 41, 0.8));
+        border-color: rgba(255, 59, 59, 0.4);
+        margin-top: 20px;
+      }
+      .pricing-banner h3 {
+        font-family: var(--font-prosto-one);
+        color: var(--color-lightskyblue);
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      .promo-banner h3 {
+        color: #ff3b3b;
+      }
+      .pricing-banner p {
+        font-family: var(--font-judson);
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.95);
+        margin: 10px 0;
+      }
+      .cta-container {
+        margin-top: 35px;
+      }
+      .section-label {
+        font-family: var(--font-prosto-one);
+        font-size: 2rem;
+        color: var(--color-lightskyblue);
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+
+    <div class="logo-mark">
+      <a href="index.html">
+        <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
+      </a>
+    </div>
+
+    <div class="app-container">
+      <div class="page-content">
+        <h2 class="page-title">Your Memories from a New Angle</h2>
+        
+        <div class="service-hero">
+          <p class="intro-description">
+            Hiring a drone pilot is a fun and accessible way to capture your favorite moments. Whether you want a stunning framed photo of your property or a dynamic video of your family gathering, we bring a cinematic touch to your personal projects.
+          </p>
+        </div>
+
+        <div class="pricing-banner promo-banner">
+          <h3>Special Promotions</h3>
+          <p>Get <strong>30% OFF</strong> your first Group Photo or Home Portrait session!</p>
+          <p>Refer a friend and receive <strong>20% OFF</strong> your next booking.</p>
+        </div>
+
+        <div class="pricing-banner">
+          <h3>Flat Hourly Rates</h3>
+          <p><strong>$130/hour</strong> for on-site flight and shooting</p>
+          <p><strong>$50/hour</strong> for professional post-processing and editing</p>
+          <div class="cta-container">
+            <a href="book.html" class="cta-primary">Book Your Personal Session</a>
+          </div>
+        </div>
+
+        <div class="about-section" style="padding-top: 0;">
+          <h3 class="section-label">Popular Personal Services</h3>
+          <div class="about-grid">
+            <div class="about-card">
+              <h3 class="about-title">Group & Family Photos</h3>
+              <p class="about-description">Perfect for family reunions, group vacations, or large outdoor gatherings where you want everyone in the frame with a beautiful backdrop.</p>
+            </div>
+            <div class="about-card">
+              <h3 class="about-title">Home Portraits</h3>
+              <p class="about-description">Get a high-resolution, beautifully edited aerial photo of your home and property. Perfect for framing and hanging in your living room.</p>
+            </div>
+            <div class="about-card">
+              <h3 class="about-title">Personal Projects</h3>
+              <p class="about-description">Want an action video of your new pool, testing out your dirt bike, or a custom backyard setup? We provide high-energy tracking shots just for fun.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-link" title="Home">
+          <img src="./public/Home.svg" alt="Home" />
+          <span>Home</span>
+        </a>
+        <a href="portfolio.html" class="nav-link" title="Portfolio">
+          <img src="./public/Portfolio.svg" alt="Portfolio" />
+          <span>Portfolio</span>
+        </a>
+        <a href="book.html" class="nav-link" title="Book">
+          <img src="./public/Bookings.svg" alt="Bookings" />
+          <span>Book</span>
+        </a>
+      </nav>
+    </div>
+
+    <script>
+      const logoMark = document.querySelector('.logo-mark');
+      const bottomNav = document.querySelector('.bottom-nav');
+      let isScrollActive = false;
+
+      function updateNavVisibility() {
+        if (window.scrollY > 50) {
+          if (!isScrollActive) {
+            logoMark.classList.add('scroll-active');
+            bottomNav.classList.add('scroll-active');
+            isScrollActive = true;
+          }
+        } else {
+          if (isScrollActive) {
+            logoMark.classList.remove('scroll-active');
+            bottomNav.classList.remove('scroll-active');
+            isScrollActive = false;
+          }
+        }
+      }
+
+      window.addEventListener('scroll', updateNavVisibility);
+      updateNavVisibility();
+    </script>
+  </body>
+</html>

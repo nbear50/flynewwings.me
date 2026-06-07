@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FNQMYSM7L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7FNQMYSM7L');
+    </script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prosto+One:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
+    <title>Real Estate - NEW Wings</title>
+    <link rel="icon" type="image/png" href="./public/NEWWingsTransparent-1@2x.png" />
+    <style>
+      .service-hero {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        padding: 0 20px;
+      }
+      .pricing-banner {
+        background: rgba(18, 24, 41, 0.6);
+        border: 1px solid rgba(101, 189, 241, 0.2);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        margin: 40px auto;
+        max-width: 800px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      .pricing-banner h3 {
+        font-family: var(--font-prosto-one);
+        color: var(--color-lightskyblue);
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+      .pricing-banner p {
+        font-family: var(--font-judson);
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.95);
+        margin: 10px 0;
+      }
+      .booking-section {
+        width: 100%;
+        margin-top: 60px;
+      }
+      .section-label {
+        font-family: var(--font-prosto-one);
+        font-size: 2rem;
+        color: var(--color-lightskyblue);
+        text-align: center;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+
+    <div class="logo-mark">
+      <a href="index.html">
+        <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
+      </a>
+    </div>
+
+    <div class="app-container">
+      <div class="page-content">
+        <h2 class="page-title">Sell Faster with a Better Perspective</h2>
+        
+        <div class="service-hero">
+          <p class="intro-description">
+            Listings with drone photos receive significantly more views and stand out in crowded markets. Get everything you need from exterior aerials to cinematic video walkthroughs.
+          </p>
+        </div>
+
+        <div class="pricing-banner">
+          <h3>Transparent Hourly Rates</h3>
+          <p><strong>$130/hour</strong> for on-site flight and shooting</p>
+          <p><strong>$50/hour</strong> for professional post-processing and editing</p>
+        </div>
+
+        <div class="about-section" style="padding-top: 0;">
+          <h3 class="section-label">Deliverables Tailored to Your Listing</h3>
+          <div class="about-grid">
+            <div class="about-card">
+              <h3 class="about-title">Basic Listing</h3>
+              <p class="about-description">Exterior aerial photos only. Perfect for capturing the property line, neighborhood context, and landscaping layout quickly.</p>
+            </div>
+            <div class="about-card">
+              <h3 class="about-title">Standard Listing</h3>
+              <p class="about-description">A complete photography package including interior wide-angle room shots and comprehensive exterior aerials.</p>
+            </div>
+            <div class="about-card">
+              <h3 class="about-title">Premium Listing</h3>
+              <p class="about-description">The ultimate showcase. Includes full interior and exterior photography plus a seamless, stabilized cinematic video walkthrough.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-section">
+          <h3 class="section-label">Schedule Your Shoot</h3>
+          <div style="width:100%;height:600px;" data-fillout-id="xgCDcFKDUWus" data-fillout-embed-type="standard" data-fillout-inherit-parameters data-fillout-dynamic-resize></div>
+          <script src="https://server.fillout.com/embed/v1/"></script>
+        </div>
+
+      </div>
+
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-link" title="Home">
+          <img src="./public/Home.svg" alt="Home" />
+          <span>Home</span>
+        </a>
+        <a href="portfolio.html" class="nav-link" title="Portfolio">
+          <img src="./public/Portfolio.svg" alt="Portfolio" />
+          <span>Portfolio</span>
+        </a>
+        <a href="book.html" class="nav-link" title="Book">
+          <img src="./public/Bookings.svg" alt="Bookings" />
+          <span>Book</span>
+        </a>
+      </nav>
+    </div>
+
+    <script>
+      const logoMark = document.querySelector('.logo-mark');
+      const bottomNav = document.querySelector('.bottom-nav');
+      let isScrollActive = false;
+
+      function updateNavVisibility() {
+        if (window.scrollY > 50) {
+          if (!isScrollActive) {
+            logoMark.classList.add('scroll-active');
+            bottomNav.classList.add('scroll-active');
+            isScrollActive = true;
+          }
+        } else {
+          if (isScrollActive) {
+            logoMark.classList.remove('scroll-active');
+            bottomNav.classList.remove('scroll-active');
+            isScrollActive = false;
+          }
+        }
+      }
+
+      window.addEventListener('scroll', updateNavVisibility);
+      updateNavVisibility();
+    </script>
+  </body>
+</html>

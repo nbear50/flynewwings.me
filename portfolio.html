@@ -2,14 +2,13 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7FNQMYSM7L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7FNQMYSM7L');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FNQMYSM7L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7FNQMYSM7L');
+    </script>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prosto+One:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
-    <title>NEW Wings Drone Photography and Videography</title>
+    <title>Portfolio - NEW Wings</title>
     <link rel="icon" type="image/png" href="./public/NEWWingsTransparent-1@2x.png" />
   </head>
 
@@ -28,13 +27,15 @@
     <div class="blob blob-4"></div>
 
     <div class="logo-mark">
-      <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
+      <a href="index.html">
+        <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
+      </a>
     </div>
 
     <div class="app-container">
       <div class="page-content">
-        <h2 class="page-title">Our Work</h2>
-        <div class="portfolio-grid" id="portfolioGrid"></div>
+        <!-- Added top margin to the grid since the page title was removed -->
+        <div class="portfolio-grid" id="portfolioGrid" style="margin-top: 120px;"></div>
       </div>
 
       <nav class="bottom-nav">
@@ -85,27 +86,28 @@
       window.addEventListener('scroll', updateNavVisibility);
       updateNavVisibility();
 
+      // Updated to separate local webp thumbnails from Cloudflare full-res images
       const portfolioImages = [
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/farm_scene.jpg', label: 'Farm Scene' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/fall_retreat.jpg', label: 'Fall Retreat' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/fallen_tree.jpg', label: 'Fallen Tree' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/combine.jpg', label: 'Combine' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/Bryce_high.jpg', label: 'Bryce Canyon' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/sedona_rocks.jpg', label: 'Sedona' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/boaters.jpg`', label: 'Boaters' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/ross_ade.jpg', label: 'Ross-Ade Stadium' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/purdue.jpg', label: 'Purdue' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/kokomo_bridge.jpg', label: 'Kokomo Bridge' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/kokomo.jpg', label: 'Kokomo' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/honduras_sunset.jpg', label: 'Honduras Sunset' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/honduras_water.jpg', label: 'Honduras Water' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/farm_wide.jpg', label: 'Farm Wide' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/windsor.jpg', label: 'Windsor' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/zion_wide.jpg', label: 'Zion' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/sedona_roundabout.jpg', label: 'Sedona Roundabout' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/sedona_rocks2.jpg', label: 'Sedona Rocks 2' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/sunset.jpg', label: 'Sunset' },
-        { src: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/tree.jpg', label: 'Tree' }
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/farm_scene.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/farm_scene.jpg', label: ' Overlooking Wittenbach Orchards - Belding, Michigan' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/fall_retreat.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/fall_retreat.jpg', label: 'Floating House - Webster Lake, Indiana' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/fallen_tree.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/fallen_tree.jpg', label: 'Fallen Tree - Russiaville, Indiana' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/combine.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/combine.jpg', label: 'Combine at Work - Russiaville, Indiana' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/Bryce_high.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/Bryce_high.jpg', label: 'Red Road - Zion National Park' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/sedona_rocks.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/sedona_rocks.jpg', label: 'Desert Beautys - Sedona, Arizona' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/boaters.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/boaters.jpg', label: 'Gone Fishing - Webster Lake, Indiana' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/ross_ade.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/ross_ade.jpg', label: 'Ross-Ade Stadium & Cary Quad - Purdue University' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/purdue.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/purdue.jpg', label: 'Bell Tower - Purdue University' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/kokomo_bridge.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/kokomo_bridge.jpg', label: 'Rusty Bridge - Kokomo, Indiana' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/kokomo.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/kokomo.jpg', label: 'City Hall - Kokomo, Indiana' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/honduras_sunset.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/honduras_sunset.jpg', label: 'Sunset over water - Honduras' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/honduras_water.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/honduras_water.jpg', label: 'Mountains beyond Rivers - Honduras' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/farm_wide.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/farm_wide.jpg', label: 'Apples Favorite Place - Belding, Michigan' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/windsor.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/windsor.jpg', label: 'Windsor Hall - Purdue University' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/zion_wide.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/zion_wide.jpg', label: 'Sunrise over Zion - Zion National Park' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/sedona_roundabout.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/sedona_roundabout.jpg', label: 'Round and Round - Sedona, Arizona' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/sedona_rocks2.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/sedona_rocks2.jpg', label: 'Scary Big Rocks - Sedona, Arizona' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/sunset.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/sunset.jpg', label: 'Sunset Over Field - Russiaville, Indiana' },
+        { thumb: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/LOD1/tree.webp', full: 'https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/tree.jpg', label: 'Lone Tree - Russiaville, Indiana' }
       ];
 
       function loadPortfolio() {
@@ -113,9 +115,10 @@
         portfolioImages.forEach((item, index) => {
           const card = document.createElement('div');
           card.className = 'portfolio-card';
+          // Loads the webp placeholder in the grid
           card.innerHTML = `
-            <img src="${item.src}" alt="${item.label}" loading="lazy" />
-            <div class="portfolio-label">${item.label}</div>
+            <img src="${item.thumb}" alt="${item.label}" loading="lazy" />
+            
           `;
           card.addEventListener('click', () => openLightbox(index));
           grid.appendChild(card);
@@ -147,7 +150,8 @@
       }
 
       function updateLightbox() {
-        lightboxImg.src = portfolioImages[currentLightboxIndex].src;
+        // Loads the full-res Cloudflare URL into the lightbox
+        lightboxImg.src = portfolioImages[currentLightboxIndex].full;
         lightboxCaption.textContent = portfolioImages[currentLightboxIndex].label;
       }
 
