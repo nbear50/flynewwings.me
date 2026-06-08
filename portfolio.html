@@ -18,9 +18,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
     <title>Portfolio - NEW Wings</title>
     <link rel="icon" type="image/png" href="./public/NEWWingsTransparent-1@2x.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
 
   <body>
+    <div class="top-nav-wrapper">
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="index.html">Home</a>
+    <a href="book.html">Book</a>
+    <hr class="menu-divider">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="business.html">Business</a>
+    <a href="estate.html">Real Estate</a>
+    <a href="events.html">Events</a>
+    <a href="personal.html">Personal Projects</a>
+    <hr class="menu-divider">
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
@@ -160,6 +184,22 @@
       });
 
       loadPortfolio();
+
+      const menuToggle = document.getElementById('menuToggle');
+const topNavWrapper = document.querySelector('.top-nav-wrapper');
+
+if (menuToggle && topNavWrapper) {
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    topNavWrapper.classList.toggle('menu-open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!topNavWrapper.contains(e.target) && topNavWrapper.classList.contains('menu-open')) {
+      topNavWrapper.classList.remove('menu-open');
+    }
+  });
+}
     </script>
   </body>
 </html>

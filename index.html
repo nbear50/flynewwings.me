@@ -19,9 +19,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
     <title>NEW Wings</title>
     <link rel="icon" type="image/png" href="./public/NEWWingsTransparent-1@2x.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
 
   <body>
+    <div class="top-nav-wrapper">
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="index.html">Home</a>
+    <a href="book.html">Book</a>
+    <hr class="menu-divider">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="business.html">Business</a>
+    <a href="estate.html">Real Estate</a>
+    <a href="events.html">Events</a>
+    <a href="personal.html">Personal Projects</a>
+    <hr class="menu-divider">
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
@@ -37,7 +61,7 @@
       <div class="page-content-home">
         
         <div class="hero-full">
-          <div class="hero-image-bg"></div>
+          <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio.mov" autoplay loop muted playsinline></video>
           <div class="hero-content">
             <div class="hero-text-block">
               <h1 class="hero-title">Get The Shot</h1>
@@ -69,6 +93,18 @@
           </div>
         </div>
 
+<div class="showreel-section">
+  <div class="showreel-container">
+    <video id="showreelVideo" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio.mov" playsinline></video>
+    <div class="showreel-overlay" id="showreelOverlay">
+      <h2 class="showreel-title">See the Showreel</h2>
+      <button class="showreel-play-btn" id="playShowreelBtn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+        
         <div class="company-intro">
           <h2 class="intro-title">Welcome to NEW Wings</h2>
           <p class="intro-description">
@@ -77,49 +113,50 @@
         </div>
 
               <div class="services">
-  <h2 class="services-title">Services</h2>
-  <div class="services-grid-interactive">
-    
-    <a href="estate.html" class="service-square">
-      <img src="./public/Services/realestate.webp" alt="Real Estate" class="service-bg">
-      <video src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/Real%20Estate/RealEstate.mp4" muted loop playsinline class="service-video"></video>
-      <h3 class="service-label">Real Estate</h3>
-    </a>
+          <hr class="footer-divider" style="margin-bottom: 40px;" />
+          <h2 class="services-title">Services</h2>
+          <div class="services-grid-interactive">
+            
+            <a href="estate.html" class="service-square">
+              <img src="./public/Services/realestate.webp" alt="Real Estate" class="service-bg">
+              <video src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/Real%20Estate/RealEstate.mp4" muted loop playsinline class="service-video"></video>
+              <h3 class="service-label">Real Estate</h3>
+            </a>
 
-    <a href="business.html" class="service-square">
-      <img src="./public/Services/comerical.webp" alt="Commercials" class="service-bg">
-      <video src="https://your-cloudflare-link.com/commercials.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
-      <h3 class="service-label">Commercials</h3>
-    </a>
+            <a href="business.html" class="service-square">
+              <img src="./public/Services/comerical.webp" alt="Commercials" class="service-bg">
+              <video src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/comerical/comericals.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
+              <h3 class="service-label">Commercials</h3>
+            </a>
 
-    <a href="events.html" class="service-square">
-      <img src="./public/Services/event.webp" alt="Events" class="service-bg">
-      <video src="https://your-cloudflare-link.com/events.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
-      <h3 class="service-label">Events</h3>
-    </a>
+            <a href="events.html" class="service-square">
+              <img src="./public/Services/event.webp" alt="Events" class="service-bg">
+              <video src="https://your-cloudflare-link.com/events.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
+              <h3 class="service-label">Events</h3>
+            </a>
 
-    <a href="personal.html" class="service-square">
-      <div class="promo-tag">30% off</div>
-      <img src="./public/Services/group.webp" alt="Group Photos" class="service-bg">
-      <video src="https://your-cloudflare-link.com/group-photos.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
-      <h3 class="service-label">Group Photos</h3>
-    </a>
+            <a href="personal.html" class="service-square">
+              <div class="promo-tag">30% off</div>
+              <img src="./public/Services/group.webp" alt="Group Photos" class="service-bg">
+              <video src="https://your-cloudflare-link.com/group-photos.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
+              <h3 class="service-label">Group Photos</h3>
+            </a>
 
-    <a href="business.html" class="service-square">
-      <img src="./public/Services/property.webp" alt="Property Tours" class="service-bg">
-      <video src="https://your-cloudflare-link.com/property-tours.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
-      <h3 class="service-label">Property Tours</h3>
-    </a>
+            <a href="business.html" class="service-square">
+              <img src="./public/Services/property.webp" alt="Property Tours" class="service-bg">
+              <video src="https://your-cloudflare-link.com/property-tours.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
+              <h3 class="service-label">Property Tours</h3>
+            </a>
 
-    <a href="personal.html" class="service-square">
-      <div class="promo-tag">30% off</div>
-      <img src="./public/Services/home.webp" alt="Home Photos" class="service-bg">
-      <video src="https://your-cloudflare-link.com/home-photos.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
-      <h3 class="service-label">Home Photos</h3>
-    </a>
+            <a href="personal.html" class="service-square">
+              <div class="promo-tag">30% off</div>
+              <img src="./public/Services/home.webp" alt="Home Photos" class="service-bg">
+              <video src="https://your-cloudflare-link.com/home-photos.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
+              <h3 class="service-label">Home Photos</h3>
+            </a>
 
-  </div>
-</div>
+          </div>
+        </div>
 
         <div class="about-section">
           <div class="about-grid">
@@ -137,9 +174,6 @@
             </div>
           </div>
         </div>
-
-  
-</div>
 
         <div class="equipment-section">
           <h3 class="equipment-label">My Equipment</h3>
@@ -165,7 +199,7 @@
           </div>
         </div>
 
-<div class="site-footer">
+        <div class="site-footer">
           <hr class="footer-divider" />
           <div class="social-links glowing">
             <a href="https://facebook.com/flynewwings" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
@@ -243,6 +277,51 @@ serviceSquares.forEach(square => {
     });
   }
 });
+
+const showreelVideo = document.getElementById('showreelVideo');
+const showreelOverlay = document.getElementById('showreelOverlay');
+const playShowreelBtn = document.getElementById('playShowreelBtn');
+const showreelContainer = document.querySelector('.showreel-container');
+
+if (playShowreelBtn && showreelVideo) {
+  playShowreelBtn.addEventListener('click', () => {
+    showreelContainer.classList.add('is-playing');
+    showreelVideo.controls = true;
+    showreelVideo.play().catch(e => console.log("Video play error:", e));
+    
+    // Automatically trigger fullscreen mode upon playing
+    if (showreelVideo.requestFullscreen) {
+      showreelVideo.requestFullscreen();
+    } else if (showreelVideo.webkitRequestFullscreen) { 
+      showreelVideo.webkitRequestFullscreen(); // Safari
+    } else if (showreelVideo.msRequestFullscreen) { 
+      showreelVideo.msRequestFullscreen(); // IE11
+    }
+  });
+
+  // Re-enable the stylized overlay if the user exits fullscreen and pauses the video
+  showreelVideo.addEventListener('pause', () => {
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+      showreelContainer.classList.remove('is-playing');
+      showreelVideo.controls = false;
+    }
+  });
+}
+const menuToggle = document.getElementById('menuToggle');
+const topNavWrapper = document.querySelector('.top-nav-wrapper');
+
+if (menuToggle && topNavWrapper) {
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    topNavWrapper.classList.toggle('menu-open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!topNavWrapper.contains(e.target) && topNavWrapper.classList.contains('menu-open')) {
+      topNavWrapper.classList.remove('menu-open');
+    }
+  });
+}
     </script>
   </body>
 </html>
