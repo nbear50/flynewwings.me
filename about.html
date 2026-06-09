@@ -39,14 +39,17 @@
         padding: 160px 20px 80px;
       }
       .about-pfp {
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-        object-fit: cover;
-        box-shadow: 0 10px 40px rgba(101, 189, 241, 0.3);
-        border: 4px solid rgba(255, 255, 255, 0.05);
-        flex-shrink: 0;
-        margin: 0 auto;
+      width: 335px;
+      height: 335px;
+      border-radius: 50%;
+      background-image: url('./public/PFP.webp');
+      background-size: 106%; /* Tweak this percentage to scale up/zoom in */
+      background-position: -4px -96px; /* Tweak the 60% to slide it left or right */
+      background-repeat: no-repeat;      box-shadow: 0 10px 40px rgba(101, 189, 241, 0.3);
+      border: 0px solid rgba(255, 255, 255, 0.05);
+      flex-shrink: 0;
+      margin: 0 auto;
+
       }
       .about-text-content {
         flex: 1;
@@ -279,7 +282,7 @@
         
         <!-- ABOUT HERO SECTION -->
         <div class="about-hero">
-          <img src="./public/PFP.webp" class="about-pfp" alt="Noel Wittenbach" onerror="this.src='./public/avata.webp'">
+          <div class="about-pfp" aria-label="Noel Wittenbach"></div>
           <div class="about-text-content">
             <h1 class="about-name">Noel Wittenbach</h1>
             <p class="about-bio">
@@ -356,7 +359,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </a>
           </div>
-          <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach<br>Email me at newwingsdrones@gmail.com for any inquiries.<br>Made with love by Noel Wittenbach</p>
+          <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach<br>Email me at newwingsdrones@gmail.com for any inquiries.<br>Made with love by Noel Wittenbach<br>© 2026 NEW Wings</p>
         </div>
 
       </div>

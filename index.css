@@ -85,7 +85,7 @@ body {
 .hero-full {
   position: relative;
   width: 100%;
-  height: min(75vh, 760px);
+  height: min(85vh, 950px);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -507,18 +507,15 @@ body {
   object-fit: contain;
 }
 
-.lightbox-close {
+.lightbox-exit-text {
   position: absolute;
   top: 24px;
-  right: 36px;
-  font-size: 48px;
-  color: white;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.lightbox-close:hover {
-  color: var(--color-lightskyblue);
+  font-family: var(--font-prosto-one);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+  text-align: center;
+  pointer-events: none;
 }
 
 .lightbox-nav {
@@ -606,12 +603,13 @@ body {
 }
 
 .nav-link img {
-  width: 26px;
-  height: 26px;
+  width: 43px;
+  height: 43px;
   filter: invert(1);
   opacity: 0.7;
   transition: all 0.3s ease;
-  margin-bottom: 4px;
+  margin-bottom: -4px;
+  margin-top: -10px;
 }
 
 .nav-link span {
@@ -717,7 +715,7 @@ body {
   font-size: clamp(2.5rem, 5vw, 4rem);
   color: var(--color-lightskyblue);
   text-align: center;
-  margin: 0 0 40px 0;
+  margin: 30px 0 40px 0;
   font-weight: 400;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
@@ -841,7 +839,7 @@ body {
 @media (max-width: 768px) {
   .logo-mark { width: 220px; height: 220px; }
   .hero-full { 
-    height: 82vh; 
+    height: 90vh; 
     align-items: flex-start; 
     overflow: visible; 
   }
