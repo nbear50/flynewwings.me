@@ -1,1 +1,421 @@
-coming soon...
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7FNQMYSM7L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7FNQMYSM7L');
+</script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prosto+One:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
+    <title>About - NEW Wings</title>
+    <link rel="icon" type="image/png" href="./public/NEWWingsTransparent-1@2x.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+      .page-content-home {
+        min-height: 100vh;
+        padding-bottom: 60px;
+      }
+      
+      /* --- ABOUT HERO SECTION --- */
+      .about-hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 160px 20px 80px;
+      }
+      .about-pfp {
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 10px 40px rgba(101, 189, 241, 0.3);
+        border: 4px solid rgba(255, 255, 255, 0.05);
+        flex-shrink: 0;
+        margin: 0 auto;
+      }
+      .about-text-content {
+        flex: 1;
+      }
+      .about-name {
+        font-family: var(--font-prosto-one);
+        font-size: 3.5rem;
+        color: var(--color-lightskyblue);
+        margin: 0 0 20px 0;
+        text-shadow: var(--text-shadow-1);
+        line-height: 1.1;
+      }
+      .about-bio {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--color-text-light);
+      }
+
+      /* --- DIVIDER --- */
+      .section-divider {
+        width: 80%;
+        max-width: 800px;
+        height: 1px;
+        border: none;
+        background: linear-gradient(90deg, transparent, rgba(101, 189, 241, 0.4), transparent);
+        margin: 0 auto 80px;
+      }
+
+      /* --- PROJECTS SECTION --- */
+      .projects-section {
+        max-width: 1300px;
+        margin: 0 auto 100px;
+        padding: 0 20px;
+      }
+      .projects-heading {
+        font-family: var(--font-prosto-one);
+        font-size: 2.8rem;
+        text-align: center;
+        margin-bottom: 60px;
+        color: var(--color-white);
+        text-shadow: var(--text-shadow-1);
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+      
+      /* --- BUBBLE / CARD --- */
+      .project-bubble {
+        background: rgba(18, 24, 41, 0.7);
+        border: 1px solid rgba(101, 189, 241, 0.2);
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+        padding: 200px 30px 40px;
+        display: flex;
+        flex-direction: column;
+        backdrop-filter: blur(16px);
+        min-height: 520px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .project-bubble:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+      }
+      .project-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 320px;
+        background-size: cover;
+        background-position: center;
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%);
+        z-index: 0;
+        opacity: 0.8;
+        transition: opacity 0.3s ease, transform 0.5s ease;
+      }
+      .project-bubble:hover .project-bg {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      .project-bubble-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .project-title {
+        font-family: var(--font-prosto-one);
+        font-size: 2rem;
+        color: var(--color-white);
+        text-align: center;
+        margin: 0 0 20px 0;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+      }
+      .project-desc {
+        font-size: 1.05rem;
+        color: var(--color-text-muted);
+        text-align: center;
+        line-height: 1.6;
+      }
+
+      /* --- WOODWORKING SPECIFIC --- */
+      .woodworking-photos {
+        position: relative;
+        height: 160px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .engr-photos {
+        position: relative;
+        height: 160px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .wood-img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 16px;
+        border: 4px solid #121829;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+        position: absolute;
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .wood-img.desk {
+        transform: rotate(-10deg) translateX(-35px);
+        z-index: 1;
+      }
+      .wood-img.bowl {
+        transform: rotate(8deg) translateX(35px);
+        z-index: 2;
+      }
+      .project-bubble:hover .wood-img.desk {
+        transform: rotate(-16deg) translateX(-55px) scale(1.05);
+      }
+      .project-bubble:hover .wood-img.bowl {
+        transform: rotate(14deg) translateX(55px) scale(1.05);
+      }
+      
+      /* --- BOILER ROYALE SPECIFIC --- */
+      .boiler-photos {
+        position: relative;
+        margin-top: auto;
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .landscape-img {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 16px;
+        border: 4px solid #121829;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      .project-bubble:hover .landscape-img {
+        transform: scale(1.05);
+      }
+
+      /* --- RESPONSIVE --- */
+      @media (max-width: 900px) {
+        .about-hero {
+          flex-direction: column;
+          text-align: center;
+          padding-top: 130px;
+        }
+        .about-name {
+          font-size: 2.8rem;
+        }
+        .projects-grid {
+          grid-template-columns: 1fr;
+          gap: 60px;
+        }
+        .project-bubble {
+          min-height: 480px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="top-nav-wrapper">
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="index.html">Home</a>
+    <a href="book.html">Book</a>
+    <hr class="menu-divider">
+    <a href="portfolio.html">Portfolio</a>
+    <a href="business.html">Business</a>
+    <a href="estate.html">Real Estate</a>
+    <a href="events.html">Events</a>
+    <a href="personal.html">Personal Projects</a>
+    <hr class="menu-divider">
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+
+    <div class="logo-mark">
+     <a href="index.html">
+       <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
+       </a>
+    </div>
+
+    <div class="app-container">
+      <div class="page-content-home">
+        
+        <!-- ABOUT HERO SECTION -->
+        <div class="about-hero">
+          <img src="./public/PFP.webp" class="about-pfp" alt="Noel Wittenbach" onerror="this.src='./public/avata.webp'">
+          <div class="about-text-content">
+            <h1 class="about-name">Noel Wittenbach</h1>
+            <p class="about-bio">
+              I am passionate about providing high-quality drone photography and videography for everyone. Whether it's capturing the perfect angle of a real estate property, mapping a construction site, or producing breathtaking cinematic sequences, my goal is to elevate your story with unmatched aerial perspectives. Beyond drones, I love bringing ideas to life through various engineering and creative disciplines.
+            </p>
+          </div>
+        </div>
+
+        <hr class="section-divider" />
+
+        <!-- PROJECTS SECTION -->
+        <div class="projects-section">
+          <h2 class="projects-heading">What Else I've Been Up To...</h2>
+          
+          <div class="projects-grid">
+
+            <div class="project-bubble">
+              <!-- Placeholder background for Woodworking -->
+              <div class="project-bg" style="background-image: url('./public/bowl.webp'); background-color: #3e2723;"></div>
+              <div class="project-bubble-content">
+                <h3 class="project-title">Woodworking</h3>
+                <p class="project-desc">
+                  Learning the art of woodworking with the help of friends and my dad. My favorite projects have been a fruit bowl and a red oak nightstand.
+                </p>
+                <div class="engr-photos">
+                  <img src="./public/desk.webp" class="wood-img desk" alt="Wooden Desk" onerror="this.src='./public/hero.png'">
+                  <img src="./public/bowlio.webp" class="wood-img bowl" alt="Wooden Bowl" onerror="this.src='./public/hero.png'">
+                </div>
+              </div>
+            </div>
+
+                        <!-- PROJECT 3: Purdue Engineering -->
+            <div class="project-bubble">
+              <div class="project-bg" style="background-image: url('./public/23.webp'); background-color: #1a2035;"></div>
+              <div class="project-bubble-content">
+                <h3 class="project-title">Purdue Engineering</h3>
+                <p class="project-desc">
+                  In the ENGR131 Ideas to Innovation class, I worked as a team to design a fully interactive game for students based on the Purdue Bell Tower. The game featured a hammer that launched a ball up the inside of the tower, in an attempt to ring the bells at the top.
+                </p>
+                <div class="engr-photos">
+                  <img src="./public/engr.webp" class="wood-img desk" alt="3D printed Design">
+                  <img src="./public/engr2.webp" class="wood-img bowl" alt="Drone shot of engr project">
+                </div>
+              </div>
+            </div>
+            
+            <!-- PROJECT 1: Boiler Royale -->
+            <div class="project-bubble">
+              <div class="project-bg" style="background-image: url('./public/boiler.webp'); margin-top: -60px; background-size: 130%; background-repeat: no-repeat;"></div>
+              <div class="project-bubble-content">
+                <h3 class="project-title">Boiler Royale</h3>
+                <p class="project-desc">
+                  THE Outdoor Public Clash Royale Tournament at Purdue University. Players went head to head in Clash Royale with matches projected on the big screen and the bracket managed by my own custom software. With over 100 competitors and a 150$ cash prize it was a night for the books for sure.
+                </p>
+                <div class="boiler-photos">
+                  <img src="./public/croud.webp" class="landscape-img" alt="Boiler Royale Crowd">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="site-footer">
+          <hr class="footer-divider" />
+          <div class="social-links glowing">
+            <a href="https://facebook.com/flynewwings" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2.04c-5.5 0-10 4.48-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.54-4.5-10.02-10-10.02Z"/></svg>
+            </a>
+            <a href="https://instagram.com/flynewwings" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.555.556.9 1.11 1.152 1.772.249.637.416 1.362.466 2.427.049 1.067.06 1.405.06 4.123 0 2.717-.01 3.056-.06 4.122-.05 1.065-.217 1.79-.466 2.428-.254.66-.598 1.216-1.152 1.772-.556.555-1.11.9-1.772 1.152-.637.249-1.362.416-2.427.466-1.067.049-1.405.06-4.123.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.217-2.428-.466a4.89 4.89 0 0 1-1.772-1.152 4.9 4.9 0 0 1-1.153-1.772c-.249-.637-.416-1.362-.465-2.428C2.01 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.065.217-1.79.465-2.428a4.89 4.89 0 0 1 1.153-1.772A4.89 4.89 0 0 1 5.45 2.525c.637-.248 1.362-.415 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.987.01-4.042.059-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.055-.058 1.37-.058 4.041 0 2.67.01 2.987.058 4.042.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.042.058 2.67 0 2.987-.01 4.041-.058.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041 0-2.67-.01-2.987-.058-4.042-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.055-.048-1.37-.058-4.041-.058zM12 6.865a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27zm0 1.802a3.333 3.333 0 1 0 0 6.666 3.333 3.333 0 0 0 0-6.666zm5.338-3.205a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+            </a>
+            <a href="mailto:newwingsdrones@gmail.com" class="social-link" title="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </a>
+          </div>
+          <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach<br>Email me at newwingsdrones@gmail.com for any inquiries.<br>Made with love by Noel Wittenbach</p>
+        </div>
+
+      </div>
+
+      <nav class="bottom-nav">
+        <a href="index.html" class="nav-link" title="Home">
+          <img src="./public/Home.svg" alt="Home" />
+          <span>Home</span>
+        </a>
+        <a href="portfolio.html" class="nav-link" title="Portfolio">
+          <img src="./public/Portfolio.svg" alt="Portfolio" />
+          <span>Portfolio</span>
+        </a>
+        <a href="book.html" class="nav-link" title="Book">
+          <img src="./public/Bookings.svg" alt="Bookings" />
+          <span>Book</span>
+        </a>
+      </nav>
+    </div>
+
+    <script>
+      const logoMark = document.querySelector('.logo-mark');
+      const bottomNav = document.querySelector('.bottom-nav');
+      let isScrollActive = false;
+
+      function updateNavVisibility() {
+        if (window.scrollY > 50) {
+          if (!isScrollActive) {
+            logoMark.classList.add('scroll-active');
+            bottomNav.classList.add('scroll-active');
+            isScrollActive = true;
+          }
+        } else {
+          if (isScrollActive) {
+            logoMark.classList.remove('scroll-active');
+            bottomNav.classList.remove('scroll-active');
+            isScrollActive = false;
+          }
+        }
+      }
+
+      window.addEventListener('scroll', updateNavVisibility);
+      updateNavVisibility();
+
+      const menuToggle = document.getElementById('menuToggle');
+      const topNavWrapper = document.querySelector('.top-nav-wrapper');
+
+      if (menuToggle && topNavWrapper) {
+        menuToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          topNavWrapper.classList.toggle('menu-open');
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!topNavWrapper.contains(e.target) && topNavWrapper.classList.contains('menu-open')) {
+            topNavWrapper.classList.remove('menu-open');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
