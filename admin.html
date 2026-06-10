@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>NEW Wings | Executive Control</title>
+  
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./admin.css" />
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prosto+One:wght@400&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
+</head>
+
+<body class="admin-minimal">
+
+  <div class="ambient-light light-1"></div>
+  <div class="ambient-light light-2"></div>
+  <div class="ambient-light light-3"></div>
+
+  <div class="app-shell">
+    
+    <header class="admin-header">
+      <h1 class="brand-lockup"><div class="live-dot"></div> NW // ADMIN</h1>
+      <button class="btn-exit" onclick="window.location.href='index.html'">Disconnect</button>
+    </header>
+
+    <div class="mobile-tabs" id="tab-controls">
+      <button class="tab-btn active" data-target="tab-overview">Overview</button>
+      <button class="tab-btn" data-target="tab-content">Content</button>
+      <button class="tab-btn" data-target="tab-assets">Assets</button>
+      <button class="tab-btn" data-target="tab-alerts">Alerts</button>
+    </div>
+
+    <main class="panel-viewport">
+      
+      <section class="glass-panel active" id="tab-overview">
+        <h2 class="panel-heading">Live Telemetry</h2>
+        
+        <div class="stat-grid">
+          <div class="stat-card"><div class="s-val" id="ga-views">4,911</div><div class="s-lbl">Page Views</div></div>
+          <div class="stat-card"><div class="s-val" id="ga-users">1,482</div><div class="s-lbl">Uniques</div></div>
+          <div class="stat-card"><div class="s-val" id="fb-reach">2,840</div><div class="s-lbl">FB Reach</div></div>
+          <div class="stat-card"><div class="s-val" id="fb-engagements">412</div><div class="s-lbl">FB Interact</div></div>
+        </div>
+
+        <h2 class="panel-heading" style="margin-top: 10px;">Atmospheric Sensors</h2>
+        <div class="weather-node">
+          <div class="w-loc">Kokomo, IN</div>
+          <div class="w-data">
+            <span id="ko-temp">--°F</span>
+            <span id="ko-wind" style="color: var(--text-muted);">-- mph</span>
+          </div>
+        </div>
+        <div class="weather-node">
+          <div class="w-loc">W. Lafayette, IN</div>
+          <div class="w-data">
+            <span id="wl-temp">--°F</span>
+            <span id="wl-wind" style="color: var(--text-muted);">-- mph</span>
+          </div>
+        </div>
+
+        <div class="business-card-module">
+          <div class="shiny-card" onclick="this.classList.toggle('expanded')">
+            <img src="./public/card.webp" alt="Business Card" class="card-bg-img" onerror="this.src='./public/hero.webp'">
+            <div class="card-glare"></div>
+            <div class="card-details">
+              <h3 class="cd-name">Noel Wittenbach</h3>
+              <p class="cd-title">FAA Part 107 Certified Pilot</p>
+              <p class="cd-info">newwingsdrones@gmail.com</p>
+              <p class="cd-info">Founder // NEW Wings</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass-panel" id="tab-content">
+        <h2 class="panel-heading">Data Matrix</h2>
+        <form class="input-stack" onsubmit="event.preventDefault(); alert('Modifications Synced.');">
+          
+          <div class="input-group">
+            <label>Real Estate Base Tariff ($)</label>
+            <input type="number" class="glass-input" value="199" />
+          </div>
+          
+          <div class="input-group">
+            <label>Global Promo Tag</label>
+            <input type="text" class="glass-input" value="30% off" />
+          </div>
+
+          <div class="input-group" style="flex: 1; display: flex; flex-direction: column;">
+            <label>Biography Blurb</label>
+            <textarea class="glass-textarea">I'm Noel Wittenbach, and I am passionate about providing high-quality drone photography and videography for everyone. Whether it's capturing the perfect angle of a real estate property...</textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Push Update</button>
+        </form>
+      </section>
+
+      <section class="glass-panel" id="tab-assets">
+        <h2 class="panel-heading">R2 Bucket Sync</h2>
+        
+        <button class="btn-primary" style="margin-top: 0; margin-bottom: 20px;" onclick="document.getElementById('r2-upload').click()">Stage Overwrite File</button>
+        <input type="file" id="r2-upload" style="display: none;" onchange="alert('Staged for sync: ' + this.files[0].name)" />
+
+        <div class="asset-grid">
+          <div class="asset-item" onclick="alert('Path Copied')"><div class="a-icon">🎬</div><div class="a-name">video.mp4</div></div>
+          <div class="asset-item" onclick="alert('Path Copied')"><div class="a-icon">📸</div><div class="a-name">estate.webp</div></div>
+          <div class="asset-item" onclick="alert('Path Copied')"><div class="a-icon">📸</div><div class="a-name">comm.webp</div></div>
+          <div class="asset-item" onclick="alert('Path Copied')"><div class="a-icon">📦</div><div class="a-name">drone.png</div></div>
+          <div class="asset-item" onclick="alert('Path Copied')"><div class="a-icon">📦</div><div class="a-name">avata.webp</div></div>
+        </div>
+      </section>
+
+      <section class="glass-panel" id="tab-alerts">
+        <h2 class="panel-heading">Global Site Announcements</h2>
+        <form class="input-stack" onsubmit="event.preventDefault(); alert('Announcement Banner Pushed Live.');">
+          
+          <div class="toggle-wrapper">
+            <span class="toggle-label">Enable Top Banner Override</span>
+            <label class="switch">
+              <input type="checkbox" checked>
+              <span class="slider"></span>
+            </label>
+          </div>
+
+          <div class="input-group">
+            <label>Announcement Message</label>
+            <input type="text" class="glass-input" value="Booking filling up fast for Summer 2026! Reserve your date now." />
+          </div>
+
+          <div style="display: flex; gap: 16px;">
+            <div class="input-group" style="flex: 1;">
+              <label>Button Label</label>
+              <input type="text" class="glass-input" value="Book Now" />
+            </div>
+            <div class="input-group" style="flex: 1;">
+              <label>Button URL Destination</label>
+              <input type="text" class="glass-input" value="/book.html" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" style="background: var(--accent-gold); color: #000;">Deploy Banner</button>
+        </form>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // Tab Switching Logic for Mobile
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.glass-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+      });
+    });
+
+    // Condensed Weather API Pull
+    async function loadAtmospherics(lat, lon, targets) {
+      try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,wind_speed_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FNew_York`;
+        const res = await fetch(url);
+        const data = await res.json();
+        
+        document.getElementById(targets.temp).textContent = Math.round(data.current.temperature_2m) + '°F';
+        document.getElementById(targets.wind).textContent = Math.round(data.current.wind_speed_10m) + ' mph';
+      } catch (e) {
+        console.error("Meteorological load failed", e);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadAtmospherics(40.4864, -86.1336, {temp: 'ko-temp', wind: 'ko-wind'}); // Kokomo
+      loadAtmospherics(40.4259, -86.9081, {temp: 'wl-temp', wind: 'wl-wind'}); // W. Lafayette
+    });
+  </script>
+</body>
+</html>

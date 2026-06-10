@@ -1,0 +1,296 @@
+/* admin.css - Executive Fluted Glass System */
+
+:root {
+  --glass-bg: rgba(15, 15, 18, 0.45);
+  --glass-border-light: rgba(255, 255, 255, 0.25);
+  --glass-border-dark: rgba(0, 0, 0, 0.6);
+  --accent-gold: #f59e0b;
+  --accent-rose: #e11d48;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+body.admin-minimal {
+  margin: 0;
+  padding: 0;
+  background: #050505; /* Obsidian Base */
+  color: var(--text-main);
+  font-family: var(--font-judson);
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Sunset Noir Ambient Lighting */
+.ambient-light {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.55;
+  z-index: 0;
+  animation: float 22s infinite alternate ease-in-out;
+}
+.light-1 { width: 450px; height: 450px; background: #e11d48; top: -10%; left: -10%; } /* Crimson */
+.light-2 { width: 350px; height: 350px; background: #f59e0b; bottom: -15%; right: -5%; animation-delay: -4s;} /* Amber */
+.light-3 { width: 300px; height: 300px; background: #7c3aed; top: 40%; left: 30%; animation-duration: 28s;} /* Deep Violet */
+
+.app-shell {
+  width: 100%;
+  max-width: 1300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.brand-lockup {
+  font-family: var(--font-prosto-one);
+  font-size: 1.4rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 2px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--accent-gold);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.btn-exit {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text-main);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-judson);
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.2s;
+}
+.btn-exit:hover { background: rgba(255, 255, 255, 0.15); }
+
+/* Segmented Mobile Tabs */
+.mobile-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  padding: 6px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+}
+
+.tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 12px 4px;
+  font-family: var(--font-prosto-one);
+  font-size: 0.85rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-btn.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.panel-viewport {
+  flex: 1;
+  min-height: 0; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* ENHANCED Fluted Glass Physics */
+.glass-panel {
+  display: none; 
+  flex-direction: column;
+  height: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(140%);
+  -webkit-backdrop-filter: blur(40px) saturate(140%);
+  border: 1px solid var(--glass-border-light);
+  /* Top edge specular highlight */
+  border-top: 1px solid rgba(255, 255, 255, 0.45); 
+  border-right: 1px solid var(--glass-border-dark);
+  border-bottom: 1px solid var(--glass-border-dark);
+  border-radius: 24px;
+  padding: 24px;
+  box-sizing: border-box;
+  /* Deep shadow + inner glow */
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), inset 0 2px 10px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.glass-panel.active { display: flex; }
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.02) 0px,
+    rgba(255,255,255,0.02) 2px,
+    rgba(0,0,0,0.15) 3px,
+    rgba(0,0,0,0.15) 6px,
+    rgba(255,255,255,0.01) 7px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-panel > * { position: relative; z-index: 1; }
+
+.panel-heading {
+  font-family: var(--font-prosto-one);
+  font-size: 1.1rem;
+  color: var(--accent-gold);
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Base Layouts */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.stat-card { background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 20px; }
+.s-val { font-family: var(--font-prosto-one); font-size: 2.2rem; color: #fff; margin-bottom: 4px; line-height: 1;}
+.s-lbl { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;}
+
+.weather-node { background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.w-loc { font-family: var(--font-prosto-one); font-size: 1rem; color: #fff;}
+.w-data { display: flex; gap: 16px; font-size: 1.1rem;}
+
+.input-stack { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.input-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.glass-input, .glass-textarea { width: 100%; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; font-family: var(--font-judson); font-size: 1.1rem; padding: 14px; border-radius: 12px; box-sizing: border-box; transition: all 0.2s; }
+.glass-textarea { resize: none; min-height: 110px; }
+.glass-input:focus, .glass-textarea:focus { outline: none; border-color: var(--accent-rose); background: rgba(0, 0, 0, 0.6); }
+
+.btn-primary { width: 100%; background: var(--text-main); color: #050505; font-family: var(--font-prosto-one); font-size: 1rem; padding: 16px; border: none; border-radius: 12px; cursor: pointer; margin-top: auto; transition: transform 0.2s; }
+.btn-primary:active { transform: scale(0.98); }
+
+/* Custom Toggle Switch for Alerts */
+.toggle-wrapper { display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,0.3); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); margin-bottom: 10px;}
+.toggle-label { font-size: 0.95rem; color: #fff; font-family: var(--font-prosto-one);}
+.switch { position: relative; display: inline-block; width: 50px; height: 28px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; inset: 0; background-color: rgba(255,255,255,0.1); transition: .4s; border-radius: 34px; border: 1px solid rgba(255,255,255,0.2);}
+.slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%; }
+input:checked + .slider { background-color: var(--accent-gold); border-color: var(--accent-gold);}
+input:checked + .slider:before { transform: translateX(22px); }
+
+/* R2 Grid */
+.asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 16px; margin-top: 20px; overflow-y: auto;}
+.asset-item { background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 20px 10px; text-align: center; cursor: pointer; transition: background 0.2s; }
+.asset-item:hover { background: rgba(255, 255, 255, 0.15); }
+.a-icon { font-size: 2rem; margin-bottom: 8px; }
+.a-name { font-size: 0.85rem; color: var(--text-muted); word-break: break-all; }
+
+/* Interactive Hover Business Card */
+.business-card-module {
+  margin-top: auto;
+  padding-top: 20px;
+  perspective: 1000px;
+}
+.shiny-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.6 / 1;
+  border-radius: 16px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), height 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.shiny-card:hover { transform: translateY(-5px) rotateX(2deg) rotateY(2deg); box-shadow: 0 25px 45px rgba(0,0,0,0.8); }
+
+.card-bg-img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: filter 0.4s;
+}
+
+/* The Shine Effect */
+.card-glare {
+  position: absolute; top: 0; left: -150%; width: 50%; height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  z-index: 2;
+  animation: shineSweep 6s infinite ease-in-out;
+  pointer-events: none;
+}
+@keyframes shineSweep { 0% { left: -150%; } 20% { left: 200%; } 100% { left: 200%; } }
+
+/* Expanded State Details */
+.card-details {
+  position: absolute; inset: 0; z-index: 3;
+  background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.4s; padding: 20px;
+}
+.shiny-card.expanded .card-details { opacity: 1; pointer-events: auto; }
+.shiny-card.expanded .card-bg-img { filter: blur(4px) scale(1.05); }
+
+.cd-name { font-family: var(--font-prosto-one); font-size: 1.4rem; color: #fff; margin: 0 0 4px 0;}
+.cd-title { font-size: 0.95rem; color: var(--accent-gold); margin: 0 0 16px 0; letter-spacing: 1px;}
+.cd-info { font-size: 0.95rem; color: #ddd; margin: 2px 0;}
+
+
+/* --- DESKTOP 12-COLUMN BENTO GRID --- */
+@media (min-width: 1024px) {
+  .app-shell { padding: 40px; }
+  .mobile-tabs { display: none; } 
+  
+  .panel-viewport { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: auto auto; gap: 24px; }
+  .glass-panel { display: flex !important; }
+  
+  /* Top Row */
+  #tab-overview { grid-column: span 4; grid-row: span 2; } /* Taller left column */
+  #tab-content { grid-column: span 4; grid-row: span 1; }
+  #tab-assets { grid-column: span 4; grid-row: span 1; }
+  
+  /* Bottom Row */
+  #tab-alerts { grid-column: span 8; grid-row: span 1; } /* Spans under content and assets */
+}
+
+@media (max-width: 400px) {
+  .glass-panel { padding: 16px; }
+  .s-val { font-size: 1.8rem; }
+  .weather-node { flex-direction: column; align-items: flex-start; gap: 8px; }
+}

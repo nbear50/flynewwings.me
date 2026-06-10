@@ -1059,8 +1059,105 @@ body {
   .showreel-play-btn { width: 60px; height: 60px; }
   .showreel-play-btn svg { width: 30px; height: 30px; margin-left: 4px; }
   .showreel-title { margin-top: 10px; margin-bottom: 20px; font-size: 1.9rem; }
+  .intro-description {
+  margin-left: 0;
+  margin-right: 0;
+  }
 }
 
 @media (max-width: 480px) {
   .showreel-section { padding: 0 20px; }
+}
+
+/* --- Secret Retro Keypad --- */
+#keypad-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 15, 31, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#keypad-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.keypad-container {
+  background: #1a1a1a;
+  border: 4px solid #333;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,0.5);
+  width: 320px;
+}
+
+.keypad-display {
+  background: #0a0a0a;
+  color: #00ff41; 
+  font-family: monospace;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 15px;
+  border: 2px solid #222;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: inset 0 0 10px rgba(0,255,65,0.1);
+  letter-spacing: 10px;
+  text-shadow: 0 0 5px #00ff41;
+}
+
+.keypad-display.error {
+  color: #ff3b3b;
+  text-shadow: 0 0 5px #ff3b3b;
+  animation: shake 0.4s ease-in-out;
+}
+
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.key-btn {
+  background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%);
+  border: 2px solid #111;
+  border-bottom-width: 6px;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-family: var(--font-prosto-one);
+  font-size: 1.5rem;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: all 0.1s;
+  text-shadow: 0 -1px 0 #000;
+}
+
+.key-btn:active {
+  transform: translateY(4px);
+  border-bottom-width: 2px;
+  background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.key-btn.action-btn {
+  font-size: 1rem;
+  background: linear-gradient(180deg, #4a2a2a 0%, #3a1a1a 100%);
+  color: #ff8888;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
 }

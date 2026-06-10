@@ -63,7 +63,7 @@
       <div class="page-content-home">
         
         <div class="hero-full">
-          <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/videoplayback.mp4" autoplay loop muted playsinline></video>
+          <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/videoplayback.mp4#t=20.5" autoplay loop muted playsinline></video>
           <div class="hero-content">
             <div class="hero-text-block">
               <h1 class="hero-title">Get The Shot</h1>
@@ -219,7 +219,7 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </a>
           </div>
-          <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach<br>Email me at newwingsdrones@gmail.com for any inquiries.<br>Made with love by Noel Wittenbach<br>© 2026 NEW Wings</p>
+          <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach<br>Email me at newwingsdrones@gmail.com for any inquiries.<br>Made with love by Noel Wittenbach<br><span id="secret-trigger" style="cursor: pointer;">© 2026 NEW Wings</span></p>
         </div>
 
       </div>
@@ -330,5 +330,116 @@ if (menuToggle && topNavWrapper) {
   });
 }
     </script>
+    <div id="keypad-modal">
+  <div class="keypad-container">
+    <div class="keypad-display" id="keypad-display">_ _ _ _</div>
+    <div class="keypad-grid">
+      <button class="key-btn">1</button>
+      <button class="key-btn">2</button>
+      <button class="key-btn">3</button>
+      <button class="key-btn">4</button>
+      <button class="key-btn">5</button>
+      <button class="key-btn">6</button>
+      <button class="key-btn">7</button>
+      <button class="key-btn">8</button>
+      <button class="key-btn">9</button>
+      <button class="key-btn action-btn" id="key-clear">CLR</button>
+      <button class="key-btn">0</button>
+      <button class="key-btn action-btn" id="key-close">ESC</button>
+    </div>
+  </div>
+</div>
+<script>
+  // Secret Trigger Logic
+  const secretTrigger = document.getElementById('secret-trigger');
+  const keypadModal = document.getElementById('keypad-modal');
+  const keypadDisplay = document.getElementById('keypad-display');
+  const keyBtns = document.querySelectorAll('.key-btn:not(.action-btn)');
+  const keyClear = document.getElementById('key-clear');
+  const keyClose = document.getElementById('key-close');
+
+  let clickCount = 0;
+  let clickTimer;
+  let enteredCode = '';
+  
+  // Set your 4-digit PIN here
+  const SECRET_PIN = '4865'; 
+
+  // Require 5 clicks within 3 seconds
+  if (secretTrigger) {
+    secretTrigger.addEventListener('click', () => {
+      clickCount++;
+      clearTimeout(clickTimer);
+      
+      if (clickCount >= 5) {
+        keypadModal.classList.add('active');
+        clickCount = 0;
+        enteredCode = '';
+        updateDisplay();
+      } else {
+        clickTimer = setTimeout(() => {
+          clickCount = 0;
+        }, 3000);
+      }
+    });
+  }
+
+  function updateDisplay() {
+    const padded = enteredCode.padEnd(4, '_');
+    keypadDisplay.textContent = padded.split('').join(' ');
+  }
+
+  // Handle number presses
+  keyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (enteredCode.length < 4) {
+        enteredCode += btn.textContent;
+        updateDisplay();
+        
+        if (enteredCode.length === 4) {
+          setTimeout(checkPin, 200);
+        }
+      }
+    });
+  });
+
+  // Validate the PIN
+  function checkPin() {
+    if (enteredCode === SECRET_PIN) {
+      keypadDisplay.style.color = '#fff';
+      keypadDisplay.textContent = 'O P E N';
+      
+      setTimeout(() => {
+        // Change this URL to your actual admin page
+        window.location.href = 'admin.html'; 
+      }, 800);
+    } else {
+      keypadDisplay.classList.add('error');
+      
+      setTimeout(() => {
+        keypadDisplay.classList.remove('error');
+        enteredCode = '';
+        updateDisplay();
+      }, 500);
+    }
+  }
+
+  // Action Buttons
+  if (keyClear) {
+    keyClear.addEventListener('click', () => {
+      enteredCode = '';
+      updateDisplay();
+    });
+  }
+
+  if (keyClose) {
+    keyClose.addEventListener('click', () => {
+      keypadModal.classList.remove('active');
+      enteredCode = '';
+      updateDisplay();
+    });
+  }
+</script>
+
   </body>
 </html>
