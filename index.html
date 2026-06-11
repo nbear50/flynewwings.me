@@ -62,7 +62,7 @@
       <div class="page-content-home">
         
         <div class="hero-full">
-        <img class="hero-poster" src="/public/hero.webp" alt="Hero background loading" />
+        <img class="hero-poster" src="./public/hero.webp" alt="Hero background loading" />
           <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/videoplayback.mp4#t=20.5" autoplay loop muted playsinline></video>
           <div class="hero-content">
             <div class="hero-text-block">
@@ -513,12 +513,16 @@
       if (heroVideo && heroPoster) {
         // Wait until the video actually starts playing frames
         heroVideo.addEventListener('playing', () => {
-          heroPoster.classList.add('fade-out');
+          setTimeout(() => {
+            heroPoster.classList.add('fade-out');
+            heroVideo.classList.add('fade-in');
+          }, 250);
         });
         
         // Fallback: If the video loads instantly from cache, fade out immediately
         if (heroVideo.readyState >= 3) { 
           heroPoster.classList.add('fade-out');
+          heroVideo.classList.add('fade-in');
         }
       }
     </script>

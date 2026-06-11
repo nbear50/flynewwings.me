@@ -181,8 +181,10 @@ body {
 
 /* Mobile alignment */
 @media (max-width: 768px) {
-  .hero-poster {
-    object-position: 70% center; /* Shift the poster to the left on mobile */
+  .hero-poster, .hero-video-bg {
+    object-position: 65% center;
+    transform: scale(1.15);
+    transform-origin: center center;
   }
 }
 
@@ -890,8 +892,8 @@ body {
     transform: scale(1.15); 
     transform-origin: center center;
     clip-path: none; 
-    mask-image: linear-gradient(to bottom, black 55%, transparent 100%); 
-    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%); 
+    mask-image: linear-gradient(to bottom, black 65%, transparent 100%); 
+    -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%); 
   }
   .hero-content { 
     padding: 160px 30px 0px; 
@@ -1006,6 +1008,12 @@ body {
   z-index: 1;
   mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-video-bg.fade-in {
+  opacity: 1;
 }
 
 /* SHOWREEL SECTION */
