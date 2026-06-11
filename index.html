@@ -33,7 +33,7 @@
         <span></span>
       </button>
       <div class="dropdown-menu" id="dropdownMenu">
-        <a href="index.html">Home</a>
+        <a href="https://flynewwings.me">Home</a>
         <a href="book.html">Book</a>
         <hr class="menu-divider">
         <a href="portfolio.html">Portfolio</a>
@@ -53,7 +53,7 @@
     <div class="blob blob-4"></div>
 
     <div class="logo-mark">
-      <a href="index.html">
+      <a href="https://flynewwings.me">
         <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
       </a>
     </div>
@@ -62,6 +62,7 @@
       <div class="page-content-home">
         
         <div class="hero-full">
+        <img class="hero-poster" src="/public/hero.webp" alt="Hero background loading" />
           <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/videoplayback.mp4#t=20.5" autoplay loop muted playsinline></video>
           <div class="hero-content">
             <div class="hero-text-block">
@@ -224,7 +225,7 @@
       </div>
 
       <nav class="bottom-nav">
-        <a href="index.html" class="nav-link active" title="Home">
+        <a href="https://flynewwings.me" class="nav-link active" title="Home">
           <img src="./public/Home.svg" alt="Home" />
           <span>Home</span>
         </a>
@@ -505,15 +506,21 @@
           updateDisplay();
         });
       }
+      
+      const heroVideo = document.querySelector('.hero-video-bg');
+      const heroPoster = document.querySelector('.hero-poster');
 
-      // Automatically Open Feedback Panel
-      setTimeout(() => {
-        panel.style.display = 'block';
-        feedbackWidget.classList.add('scroll-active');
-        feedbackWidget.style.opacity = '1'; 
-        feedbackWidget.style.pointerEvents = 'all';
-      }, 15000); 
-
+      if (heroVideo && heroPoster) {
+        // Wait until the video actually starts playing frames
+        heroVideo.addEventListener('playing', () => {
+          heroPoster.classList.add('fade-out');
+        });
+        
+        // Fallback: If the video loads instantly from cache, fade out immediately
+        if (heroVideo.readyState >= 3) { 
+          heroPoster.classList.add('fade-out');
+        }
+      }
     </script>
   </body>
 </html>

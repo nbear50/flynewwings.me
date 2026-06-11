@@ -99,7 +99,7 @@ body {
   background-size: cover;
   background-position: right center;
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
   mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
 }
@@ -146,6 +146,44 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+}
+
+.hero-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2; /* Puts it above the video but below your text */
+  transition: opacity 1.5s ease-in-out; /* Controls the fade speed */
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+
+}
+
+/* Class applied by JS to trigger the fade */
+.hero-poster.fade-out {
+  opacity: 0;
+}
+
+/* Make sure your video sits at z-index 0 */
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Mobile alignment */
+@media (max-width: 768px) {
+  .hero-poster {
+    object-position: 70% center; /* Shift the poster to the left on mobile */
+  }
 }
 
 .cta-primary,
