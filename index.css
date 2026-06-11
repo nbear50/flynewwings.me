@@ -170,7 +170,7 @@ body {
 
 /* Make sure your video sits at z-index 0 */
 .hero-video-bg {
-  position: absolute;
+  position: 0px, 0px;
   top: 0;
   left: 0;
   width: 100%;
@@ -181,10 +181,15 @@ body {
 
 /* Mobile alignment */
 @media (max-width: 768px) {
-  .hero-poster, .hero-video-bg {
+  .hero-poster{ 
     object-position: 65% center;
     transform: scale(1.15);
     transform-origin: center center;
+  }
+  .hero-video-bg{ 
+  object-position: center center;
+  transform: scale(1.15);
+  transform-origin: center center;
   }
 }
 
@@ -1109,6 +1114,7 @@ body {
   margin-left: 0;
   margin-right: 0;
   }
+
 }
 
 @media (max-width: 480px) {
