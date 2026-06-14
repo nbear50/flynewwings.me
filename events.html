@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Event Drone Photography & Aerial Video | NEW Wings</title>
+    <title>Events | NEW Wings</title>
     <meta name="description" content="Capture the full scale of your event with professional drone coverage. Perfect for action sports, festivals, retreats, and private parties.">
     <meta property="og:title" content="NEW Wings | Event Drone Photography & Aerial Video" />
     <meta property="og:description" content="Capture the full scale of your event with professional drone coverage. Perfect for action sports, festivals, retreats, and private parties." />
-    <meta property="og:image" content="https://flynewwings.me/public/hero.webp" />
+    <meta property="og:image" content="https://flynewwings.me/public/Services/event.webp" />
     <meta property="og:url" content="https://flynewwings.me/events.html" />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FNQMYSM7L"></script>
@@ -22,75 +22,324 @@
     <link rel="stylesheet" href="./index.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prosto+One:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
-    <title>Event Coverage - NEW Wings</title>
+    <title>Events - NEW Wings</title>
     <link rel="icon" type="image/png" href="./public/NEWWingsTransparent-1@2x.png" />
+    
     <style>
-      .service-hero {
+      .construction-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(90deg, rgba(18, 24, 41, 0.9), rgba(235, 37, 96, 0.8), rgba(29, 78, 216, 0.8), rgba(18, 24, 41, 0.9));
+        color: white;
         text-align: center;
-        max-width: 800px;
-        margin: 0 auto 20px;
+        padding: 8px 20px;
+        padding-bottom: 40px;
+        font-family: var(--font-prosto-one);
+        font-size: 2rem;
+        z-index: 3000;
+        box-sizing: border-box;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        pointer-events: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        backdrop-filter: blur(5px);
+      }
+      /* Page Specific Overrides */
+      .page-content-events {
+        width: 100%;
+        padding: 0 0 120px 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Altered Hero for Transition Bridge */
+      .hero-full {
+        align-items: flex-end;
+        height: min(90vh, 1000px);
+      }
+      .hero-video-bg {
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+      }
+      .hero-poster {
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+      }
+      .hero-content {
+        padding-bottom: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+      }
+      .hero-text-block {
+        text-align: center;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      .hero-title {
+        font-family: var(--font-prosto-one);
+        font-size: clamp(3.5rem, 10vw, 8rem);
+        font-weight: 400;
+        margin: 0 0 10px 0;
+        /* Multi-layered shadow for deep contrast */
+        text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.8), 0 0 80px rgba(0, 0, 0, 0.6);
+        letter-spacing: 2px;
+        line-height: 1.1;
+        word-wrap: break-word;
         padding: 0 20px;
       }
-      .pricing-banner {
-        background: rgba(18, 24, 41, 0.6);
-        border: 1px solid rgba(101, 189, 241, 0.2);
-        border-radius: 20px;
-        padding: 40px;
-        text-align: center;
-        margin: 40px auto;
+      .hero-subtitle {
+        font-family: var(--font-judson);
+        font-size: clamp(1.2rem, 3vw, 1.8rem);
+        color: rgba(255, 255, 255, 0.95);
+        line-height: 1.6;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
         max-width: 800px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Expanded Landscape Showcase */
+      .event-showcase-container {
+        max-width: 1600px;
+        width: 100%;
+        margin: -20px auto 60px;
+        padding: 0 60px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 5;
+      }
+      .event-row {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        margin-bottom: 120px;
+      }
+      .event-row:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+      .event-text {
+        flex: 1;
+        max-width: 500px;
+      }
+      .event-title {
+        font-family: var(--font-prosto-one);
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        color: var(--color-lightskyblue);
+        margin: 0 0 20px 0;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      }
+      .event-desc {
+        font-family: var(--font-judson);
+        font-size: 1.35rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      
+      /* Sleek Single Photos */
+      .event-visual {
+        flex: 1.6;
+        height: 550px;
+        border-radius: 24px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        border: 1px solid rgba(101, 189, 241, 0.2);
+        background: #121829;
+      }
+      .event-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .event-row:hover .event-visual img {
+        transform: scale(1.05);
+      }
+      
+      /* Gradient Style Book Buttons */
+      .cta-gradient {
+        background: linear-gradient(135deg, #eb2560 0%, #1d4ed8 100%);
+        color: white;
+        font-family: var(--font-prosto-one);
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        padding: 16px 40px;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        border: none;
+        box-shadow: 0 10px 30px rgba(235, 37, 96, 0.3);
+      }
+      .cta-gradient:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(235, 37, 96, 0.5);
+      }
+
+      /* Bottom Pricing Section */
+      .pricing-banner-wrapper {
+        width: 100%;
+        padding: 40px 20px 80px;
+        position: relative;
+        z-index: 5;
+      }
+      .pricing-banner {
+        background: rgba(18, 24, 41, 0.7);
+        border: 1px solid rgba(101, 189, 241, 0.3);
+        border-radius: 24px;
+        padding: 60px 40px;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 900px;
+        backdrop-filter: blur(20px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(101, 189, 241, 0.1);
       }
       .pricing-banner h3 {
         font-family: var(--font-prosto-one);
         color: var(--color-lightskyblue);
-        font-size: 2rem;
+        font-size: clamp(2rem, 4vw, 3rem);
         margin-top: 0;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.5);
       }
       .pricing-banner p {
         font-family: var(--font-judson);
-        font-size: 1.3rem;
+        font-size: clamp(1.3rem, 3vw, 1.6rem);
         color: rgba(255, 255, 255, 0.95);
-        margin: 10px 0;
+        margin: 15px 0;
       }
-      .cta-container {
-        margin-top: 35px;
+      .pricing-banner strong {
+        color: var(--color-white);
+        font-size: 1.1em;
       }
-      .section-label {
+
+      /* Massive Sticky Bottom Nav Book Button */
+      .bottom-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 10px 10px 20px;
+        width: min(500px, calc(100% - 40px));
+        gap: 20px;
+      }
+      .nav-icons-container {
+        display: flex;
+        gap: 12px;
+      }
+      .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        border-radius: 20px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+      .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .nav-link img {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 4px;
+      }
+      .nav-link span {
+        display: block;
+        font-family: var(--font-judson);
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.8);
+        letter-spacing: 0.5px;
+      }
+      .nav-book-massive {
+        flex: 1;
+        background: linear-gradient(135deg, #eb2560 0%, #1d4ed8 100%);
+        color: white;
+        text-decoration: none;
         font-family: var(--font-prosto-one);
-        font-size: 2rem;
-        color: var(--color-lightskyblue);
+        font-size: 1.3rem;
         text-align: center;
-        margin-bottom: 30px;
+        padding: 18px 24px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(29, 78, 216, 0.4);
+      }
+      .nav-book-massive:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 35px rgba(235, 37, 96, 0.6);
+      }
+
+      /* Mobile Adjustments */
+      @media (max-width: 900px) {
+        .event-showcase-container { padding: 0 30px; margin-top: 0px; }
+        .event-row, .event-row:nth-child(even) {
+          flex-direction: column;
+          gap: 30px;
+          margin-bottom: 80px;
+          text-align: center;
+        }
+        .event-text { max-width: 100%; }
+        .event-visual { width: 100%; height: 350px; }
+        .hero-title { font-size: clamp(3rem, 12vw, 4.5rem); }
+        .hero-content { padding-bottom: 40px; }
+        
+        /* Nav tweaks for smaller screens */
+        .bottom-nav {
+          padding: 10px;
+          width: calc(100% - 20px);
+          gap: 10px;
+        }
+        .nav-icons-container {
+          gap: 8px;
+        }
+        .nav-link {
+          padding: 6px 8px;
+        }
+        .nav-link img {
+          width: 24px;
+          height: 24px;
+        }
+        .nav-link span {
+          font-size: 0.8rem;
+        }
+        .nav-book-massive {
+          font-size: 1.1rem;
+          padding: 14px 16px;
+        }
+        
       }
     </style>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
 
   <body>
+
+    <div class="construction-banner">🚧 Page Under Construction 🚧</div>
+
     <div class="top-nav-wrapper">
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  <div class="dropdown-menu" id="dropdownMenu">
-    <a href="https://flynewwings.me">Home</a>
-    <a href="book.html">Book</a>
-    <hr class="menu-divider">
-    <a href="portfolio.html">Portfolio</a>
-    <a href="business.html">Business</a>
-    <a href="estate.html">Real Estate</a>
-    <a href="events.html">Events</a>
-    <a href="personal.html">Personal Projects</a>
-    <hr class="menu-divider">
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-  </div>
-</div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="dropdown-menu" id="dropdownMenu">
+        <a href="https://flynewwings.me">Home</a>
+        <a href="book.html">Book</a>
+        <hr class="menu-divider">
+        <a href="portfolio.html">Portfolio</a>
+        <a href="business.html">Business</a>
+        <a href="estate.html">Real Estate</a>
+        <a href="events.html">Events</a>
+        <a href="personal.html">Personal Projects</a>
+        <hr class="menu-divider">
+        <a href="about.html">About</a>
+      </div>
+    </div>
 
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
@@ -104,77 +353,116 @@
     </div>
 
     <div class="app-container">
-      <div class="page-content">
-        <h2 class="page-title">Capture the Whole Experience</h2>
+      <div class="page-content-events">
         
-        <div class="service-hero">
-          <p class="intro-description">
-            Ground cameras miss the size of a crowd and the layout of a venue. Drones capture the sheer scale of your gathering, track fast-moving subjects from unique angles, and provide a comprehensive overview that standard photography simply cannot achieve.
-          </p>
-        </div>
-
-        <div class="pricing-banner">
-          <h3>Transparent Event Pricing</h3>
-          <p><strong>$130/hour</strong> for on-site flight and shooting</p>
-          <p><strong>$50/hour</strong> for professional post-processing and editing</p>
-          <div class="cta-container">
-            <a href="book.html" class="cta-primary">Secure Your Event Date</a>
+        <div class="hero-full">
+          <img 
+            class="hero-poster" 
+            src="./public/Services/event.webp" 
+            alt="Festival crowd from above" 
+            loading="eager" />
+          <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/events/events.mp4" autoplay loop muted playsinline></video>
+          <div class="hero-content">
+            <div class="hero-text-block">
+              <h1 class="hero-title">Events</h1>
+              <p class="hero-subtitle">Ground cameras miss the scale of a crowd and the layout of a venue. Drones capture the sheer magnitude of your gathering from angles standard photography simply cannot achieve.</p>
+            </div>
           </div>
         </div>
 
-        <div class="about-section" style="padding-top: 0;">
-          <h3 class="section-label">Events We Cover</h3>
-          <div class="about-grid">
-            <div class="about-card">
-              <h3 class="about-title">Action Sports</h3>
-              <p class="about-description">Keep up with the action. High-speed tracking and dynamic angles perfect for races, games, and extreme sports competitions.</p>
+        <div class="event-showcase-container">
+          
+          <div class="event-row">
+            <div class="event-text">
+              <h2 class="event-title">Action Sports</h2>
+              <p class="event-desc">Keep up with the action. We utilize high-speed tracking and dynamic FPV angles to capture the adrenaline of races, games, and extreme sports competitions in a way that ground operators cannot.</p>
             </div>
-            <div class="about-card">
-              <h3 class="about-title">Parades & Festivals</h3>
-              <p class="about-description">Capture the massive scale and energy of large public gatherings, floats, and crowds from breathtaking vantage points.</p>
+            <div class="event-visual">
+              <img src="./public/placeholder-sports-1.jpg" alt="High speed sports drone shot" onerror="this.src='./public/hero.webp'">
             </div>
-            <div class="about-card">
-              <h3 class="about-title">Camps & Retreats</h3>
-              <p class="about-description">Document the full layout of the grounds and all the outdoor activities to create engaging promotional material for future seasons.</p>
+          </div>
+
+          <div class="event-row">
+            <div class="event-text">
+              <h2 class="event-title">Parades & Festivals</h2>
+              <p class="event-desc">Capture the massive scale and energy of large public gatherings. From sweeping establishing shots of the crowd to dynamic orbits around floats and stages, aerial footage brings the festival atmosphere to life.</p>
             </div>
-            <div class="about-card">
-              <h3 class="about-title">Private Parties</h3>
-              <p class="about-description">Get unique group photos and highlight reels of outdoor weddings, reunions, and celebrations to remember the day forever.</p>
+            <div class="event-visual">
+              <img src="./public/Services/event.webp" alt="Festival crowd drone shot" onerror="this.src='./public/hero.webp'">
+            </div>
+          </div>
+
+          <div class="event-row">
+            <div class="event-text">
+              <h2 class="event-title">Camps & Retreats</h2>
+              <p class="event-desc">Document the full layout of the grounds and highlight outdoor activities to create engaging, highly effective promotional material for future seasons and returning attendees.</p>
+            </div>
+            <div class="event-visual">
+              <img src="./public/placeholder-camp-1.jpg" alt="Camp layout drone shot" onerror="this.src='./public/hero.webp'">
+            </div>
+          </div>
+
+          <div class="event-row">
+            <div class="event-text">
+              <h2 class="event-title">Private Parties</h2>
+              <p class="event-desc">Get unique group photos and cinematic highlight reels of outdoor weddings, reunions, and celebrations. We operate discreetly to make sure you remember the day forever without interrupting the moment.</p>
+            </div>
+            <div class="event-visual">
+              <img src="./public/placeholder-party-1.jpg" alt="Private party drone shot" onerror="this.src='./public/hero.webp'">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="pricing-banner-wrapper">
+          <div class="pricing-banner">
+            <h3>Transparent Event Pricing</h3>
+            <p><strong>$130/hour</strong> for on-site flight and shooting</p>
+            <p><strong>$50/hour</strong> for professional post-processing and editing</p>
+            <div style="margin-top: 40px;">
+              <a href="book.html" class="cta-gradient">Secure Your Event Date</a>
             </div>
           </div>
         </div>
 
       </div>
 
-              <div class="site-footer">
-          <hr class="footer-divider" />
-          <div class="social-links glowing">
-            <a href="https://facebook.com/flynewwings" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2.04c-5.5 0-10 4.48-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.54-4.5-10.02-10-10.02Z"/></svg>
-            </a>
-            <a href="https://instagram.com/flynewwings" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.555.556.9 1.11 1.152 1.772.249.637.416 1.362.466 2.427.049 1.067.06 1.405.06 4.123 0 2.717-.01 3.056-.06 4.122-.05 1.065-.217 1.79-.466 2.428-.254.66-.598 1.216-1.152 1.772-.556.555-1.11.9-1.772 1.152-.637.249-1.362.416-2.427.466-1.067.049-1.405.06-4.123.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.217-2.428-.466a4.89 4.89 0 0 1-1.772-1.152 4.9 4.9 0 0 1-1.153-1.772c-.249-.637-.416-1.362-.465-2.428C2.01 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.065.217-1.79.465-2.428a4.89 4.89 0 0 1 1.153-1.772A4.89 4.89 0 0 1 5.45 2.525c.637-.248 1.362-.415 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.987.01-4.042.059-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.055-.058 1.37-.058 4.041 0 2.67.01 2.987.058 4.042.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.042.058 2.67 0 2.987-.01 4.041-.058.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041 0-2.67-.01-2.987-.058-4.042-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.055-.048-1.37-.058-4.041-.058zM12 6.865a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27zm0 1.802a3.333 3.333 0 1 0 0 6.666 3.333 3.333 0 0 0 0-6.666zm5.338-3.205a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
-            </a>
-            <a href="mailto:newwingsdrones@gmail.com" class="social-link" title="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            </a>
-          </div>
-          <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach<br>Email me at newwingsdrones@gmail.com for any inquiries.<br>Made with love by Noel Wittenbach<br>© 2026 NEW Wings</p>
+
+      <div class="service-area-section" style="text-align: center; padding: 40px 20px; color: var(--color-text-muted); font-family: var(--font-judson);">
+        <h3 style="font-family: var(--font-prosto-one); color: var(--color-lightskyblue); margin-bottom: 15px;">Areas Served</h3>
+        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+          I typically provide services to the Kokomo, Lafayette, Indianapolis, and surrounding areas. If you are curious, just ask! I love to travel and would be happy to discuss options.
+        </p>
+      </div>
+
+      <div class="site-footer">
+        <hr class="footer-divider" />
+        <div class="social-links glowing">
+          <a href="https://facebook.com/flynewwings" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2.04c-5.5 0-10 4.48-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.54-4.5-10.02-10-10.02Z"/></svg>
+          </a>
+          <a href="https://instagram.com/flynewwings" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.555.556.9 1.11 1.152 1.772.249.637.416 1.362.466 2.427.049 1.067.06 1.405.06 4.123 0 2.717-.01 3.056-.06 4.122-.05 1.065-.217 1.79-.466 2.428-.254.66-.598 1.216-1.152 1.772-.556.555-1.11.9-1.772 1.152-.637.249-1.362.416-2.427.466-1.067.049-1.405.06-4.123.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.217-2.428-.466a4.89 4.89 0 0 1-1.772-1.152 4.9 4.9 0 0 1-1.153-1.772c-.249-.637-.416-1.362-.465-2.428C2.01 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.065.217-1.79.465-2.428a4.89 4.89 0 0 1 1.153-1.772A4.89 4.89 0 0 1 5.45 2.525c.637-.248 1.362-.415 2.428-.465C8.944 2.01 9.283 2 12 2zm0 1.802c-2.67 0-2.987.01-4.042.059-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.055-.058 1.37-.058 4.041 0 2.67.01 2.987.058 4.042.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.042.058 2.67 0 2.987-.01 4.041-.058.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041 0-2.67-.01-2.987-.058-4.042-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.055-.048-1.37-.058-4.041-.058zM12 6.865a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27zm0 1.802a3.333 3.333 0 1 0 0 6.666 3.333 3.333 0 0 0 0-6.666zm5.338-3.205a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
+          </a>
+          <a href="mailto:newwingsdrones@gmail.com" class="social-link" title="Email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
         </div>
+        <p class="footer-credit">All photos and videos are proudly shot and edited by Noel Wittenbach<br>Email me at newwingsdrones@gmail.com for any inquiries.<br>Made with love by Noel Wittenbach<br>© 2026 NEW Wings</p>
+      </div>
 
       <nav class="bottom-nav">
-        <a href="https://flynewwings.me" class="nav-link" title="Home">
-          <img src="./public/Home.svg" alt="Home icon" />
-          <span>Home</span>
-        </a>
-        <a href="portfolio.html" class="nav-link" title="Portfolio">
-          <img src="./public/Portfolio.svg" alt="Portfolio icon" />
-          <span>Portfolio</span>
-        </a>
-        <a href="book.html" class="nav-link" title="Book">
-          <img src="./public/Bookings.svg" alt="Bookings icon" />
-          <span>Book</span>
-        </a>
+        <div class="nav-icons-container">
+          <a href="https://flynewwings.me" class="nav-link" title="Home">
+            <img src="./public/Home.svg" alt="Home icon" />
+            <span>Home</span>
+          </a>
+          <a href="portfolio.html" class="nav-link" title="Portfolio">
+            <img src="./public/Portfolio.svg" alt="Portfolio icon" />
+            <span>Portfolio</span>
+          </a>
+        </div>
+        <a href="book.html" class="nav-book-massive">Book Now</a>
       </nav>
     </div>
 
@@ -203,20 +491,37 @@
       updateNavVisibility();
 
       const menuToggle = document.getElementById('menuToggle');
-const topNavWrapper = document.querySelector('.top-nav-wrapper');
+      const topNavWrapper = document.querySelector('.top-nav-wrapper');
 
-if (menuToggle && topNavWrapper) {
-  menuToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    topNavWrapper.classList.toggle('menu-open');
-  });
+      if (menuToggle && topNavWrapper) {
+        menuToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          topNavWrapper.classList.toggle('menu-open');
+        });
 
-  document.addEventListener('click', (e) => {
-    if (!topNavWrapper.contains(e.target) && topNavWrapper.classList.contains('menu-open')) {
-      topNavWrapper.classList.remove('menu-open');
-    }
-  });
-}
+        document.addEventListener('click', (e) => {
+          if (!topNavWrapper.contains(e.target) && topNavWrapper.classList.contains('menu-open')) {
+            topNavWrapper.classList.remove('menu-open');
+          }
+        });
+      }
+
+      const heroVideo = document.querySelector('.hero-video-bg');
+      const heroPoster = document.querySelector('.hero-poster');
+
+      if (heroVideo && heroPoster) {
+        heroVideo.addEventListener('playing', () => {
+          setTimeout(() => {
+            heroPoster.classList.add('fade-out');
+            heroVideo.classList.add('fade-in');
+          }, 250);
+        });
+        
+        if (heroVideo.readyState >= 3) { 
+          heroPoster.classList.add('fade-out');
+          heroVideo.classList.add('fade-in');
+        }
+      }
     </script>
   </body>
 </html>

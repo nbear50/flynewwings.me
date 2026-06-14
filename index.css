@@ -1349,3 +1349,23 @@ body {
   margin: 8px 0 0;
   font-size: 13px;
 }
+
+#construction-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(18, 24, 41, 0.9), rgba(235, 37, 96, 0.8), rgba(29, 78, 216, 0.8), rgba(18, 24, 41, 0.9));
+  color: white;
+  text-align: center;
+  padding: 8px 5px;
+  font-family: var(--font-prosto-one);
+  font-size: 2rem;
+  z-index: 3000;
+  box-sizing: border-box;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  backdrop-filter: blur(5px);
+}
