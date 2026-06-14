@@ -17,12 +17,45 @@
     <link rel="stylesheet" href="./feedback.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prosto+One:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400&display=swap" />
-    <title>NEW Wings</title>
+    <title>NEW Wings | Drone Photography & Videography in Indiana</title>
+    <meta name="description" content="FAA Part 107 certified drone photography and videography services. Specializing in real estate, events, and cinematic aerial footage in Indiana. Owned and operated by the talented Noel Wittenbach.">
     <link rel="icon" type="image/png" href="./public/NEWWingsTransparent-1@2x.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="/public/iconNEW.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "NEW Wings",
+      "image": "https://flynewwings.me/public/NEWWingsTransparent-1@2x.png",
+      "description": "Professional drone photography and videography services by an FAA Part 107 certified pilot.",
+      "url": "https://flynewwings.me",
+      "email": "newwingsdrones@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "West Lafayette",
+        "addressRegion": "IN",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        "West Lafayette",
+        "Lafayette",
+        "Indianapolis",
+        "Indiana"
+      ],
+      "founder": "Noel Wittenbach"
+    }
+    </script>
+    <meta property="og:title" content="NEW Wings | Drone Photography & Videography" />
+    <meta property="og:description" content="Professional aerial photography and video services from Noel Wittenbach." />
+    <meta property="og:image" content="https://flynewwings.me/public/hero.webp" />
+    <meta property="og:url" content="https://flynewwings.me/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   </head>
 
   <body>
@@ -54,7 +87,13 @@
 
     <div class="logo-mark">
       <a href="https://flynewwings.me">
-        <img src="./public/NEWWingsTransparent-1@2x.png" alt="NEW Wings" />
+        <img 
+          src="./public/NEWWingsTransparent-1@2x.png" 
+          srcset="./public/NEWWingsTransparent-1@2x.png 640w"
+          sizes="320px"
+          alt="NEW Wings Logo" 
+          width="320" 
+          height="320" />
       </a>
     </div>
 
@@ -62,12 +101,20 @@
       <div class="page-content-home">
         
         <div class="hero-full">
-        <img class="hero-poster" src="./public/hero.webp" alt="Hero background loading" />
+          <img 
+            class="hero-poster" 
+            src="./public/hero.webp" 
+            srcset="./public/hero.webp 1920w"
+            sizes="100vw"
+            alt="Hero background loading image" 
+            width="1920" 
+            height="1080" 
+            fetchpriority="high" />
           <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/videoplayback.mp4#t=20.5" autoplay loop muted playsinline></video>
           <div class="hero-content">
             <div class="hero-text-block">
-              <h1 class="hero-title">Get The Shot</h1>
-              <p class="hero-subtitle">Aerial photography and videography that makes your story unforgettable</p>
+              <p class="hero-title">Get the shot.</p>
+              <h1 class="hero-subtitle">Drone Photography & Videography to Elevate Your Story.</h1>
               <div class="hero-cta-group">
                 <a href="book.html" class="cta-primary">Book Now</a>
                 <a href="portfolio.html" class="cta-secondary">View Portfolio</a>
@@ -125,39 +172,87 @@
           <div class="services-grid-interactive">
             
             <a href="estate.html" class="service-square">
-              <img src="./public/Services/realestate.webp" alt="Real Estate" class="service-bg">
+              <img 
+                src="./public/Services/realestate.webp" 
+                srcset="./public/Services/realestate.webp 600w"
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+                alt="Real Estate image shows a house from above" 
+                class="service-bg" 
+                loading="lazy" 
+                width="600" 
+                height="600">
               <video src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/Real%20Estate/RealEstate.mp4" muted loop playsinline class="service-video"></video>
               <h3 class="service-label">Real Estate</h3>
             </a>
 
             <a href="business.html" class="service-square">
-              <img src="./public/Services/comerical.webp" alt="Commercials" class="service-bg">
+              <img 
+                src="./public/Services/comerical.webp" 
+                srcset="./public/Services/comerical.webp 600w"
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+                alt="Commercials image shows a property being showcased from above" 
+                class="service-bg" 
+                loading="lazy" 
+                width="600" 
+                height="600">
               <video src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/comerical/comericals.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
               <h3 class="service-label">Commercials</h3>
             </a>
 
             <a href="events.html" class="service-square">
-              <img src="./public/Services/event.webp" alt="Events" class="service-bg">
+              <img 
+                src="./public/Services/event.webp" 
+                srcset="./public/Services/event.webp 600w"
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+                alt="A festival takes place filmed by NEW Wings" 
+                class="service-bg" 
+                loading="lazy" 
+                width="600" 
+                height="600">
               <video src="https://your-cloudflare-link.com/events.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
               <h3 class="service-label">Events</h3>
             </a>
 
             <a href="personal.html" class="service-square">
               <div class="promo-tag">30% off</div>
-              <img src="./public/Services/group.webp" alt="Group Photos" class="service-bg">
+              <img 
+                src="./public/Services/group.webp" 
+                srcset="./public/Services/group.webp 600w"
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+                alt="A happy group of people on the side of a cliff smile as the drone takes their photo" 
+                class="service-bg" 
+                loading="lazy" 
+                width="600" 
+                height="600">
               <video src="https://your-cloudflare-link.com/group-photos.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
               <h3 class="service-label">Group Photos</h3>
             </a>
 
             <a href="business.html" class="service-square">
-              <img src="./public/Services/property.webp" alt="Property Tours" class="service-bg">
+              <img 
+                src="./public/Services/property.webp" 
+                srcset="./public/Services/property.webp 600w"
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+                alt="A large red barn is shown from above in stellar lighting with dramatic shadows" 
+                class="service-bg" 
+                loading="lazy" 
+                width="600" 
+                height="600">
               <video src="https://your-cloudflare-link.com/property-tours.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
               <h3 class="service-label">Property Tours</h3>
             </a>
 
             <a href="personal.html" class="service-square">
               <div class="promo-tag">30% off</div>
-              <img src="./public/Services/home.webp" alt="Home Photos" class="service-bg">
+              <img 
+                src="./public/Services/home.webp" 
+                srcset="./public/Services/home.webp 600w"
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+                alt="A framed photo of a home with a pool taken from above" 
+                class="service-bg" 
+                loading="lazy" 
+                width="600" 
+                height="600">
               <video src="https://your-cloudflare-link.com/home-photos.mp4" muted loop playsinline class="service-video" onmouseover="this.play()" onmouseout="this.pause();"></video>
               <h3 class="service-label">Home Photos</h3>
             </a>
@@ -187,7 +282,14 @@
           
           <div class="equipment-row">
             <div class="equipment-image">
-              <img src="./public/drone.png" alt="DJI Air 3" />
+              <img 
+                src="./public/drone.png" 
+                srcset="./public/drone.png 800w"
+                sizes="(max-width: 768px) 100vw, 800px"
+                alt="DJI Air 3 Drone" 
+                loading="lazy" 
+                width="800" 
+                height="480" />
             </div>
             <div class="equipment-text-box">
               <h2 class="equipment-title">DJI Air 3</h2>
@@ -201,10 +303,24 @@
               <p class="equipment-description">The Avata 360 is a unique FPV drone that shoots in 360 degrees to unlock completely new shots never before possible. This drone is lightweight, small, and capable of tight shots allowing great creativity.</p>
             </div>
             <div class="equipment-image avata-image">
-              <img src="./public/avata.webp" alt="DJI Avata 360" />
+              <img 
+                src="./public/avata.webp" 
+                srcset="./public/avata.webp 800w"
+                sizes="(max-width: 768px) 100vw, 800px"
+                alt="DJI Avata 360 Drone" 
+                loading="lazy" 
+                width="800" 
+                height="480" />
             </div>
           </div>
         </div>
+
+      <div class="service-area-section" style="text-align: center; padding: 40px 20px; color: var(--color-text-muted); font-family: var(--font-judson);">
+        <h3 style="font-family: var(--font-prosto-one); color: var(--color-lightskyblue); margin-bottom: 15px;">Areas Served</h3>
+        <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+          I typically provide services to the Kokomo, Lafayette, Indianapolis, and surrounding areas. If you are curious, just ask! I love to travel and would be happy to discuss options.
+        </p>
+      </div>
 
         <div class="site-footer">
           <hr class="footer-divider" />
@@ -226,15 +342,15 @@
 
       <nav class="bottom-nav">
         <a href="https://flynewwings.me" class="nav-link active" title="Home">
-          <img src="./public/Home.svg" alt="Home" />
+          <img src="./public/Home.svg" alt="Home icon" />
           <span>Home</span>
         </a>
         <a href="portfolio.html" class="nav-link" title="Portfolio">
-          <img src="./public/Portfolio.svg" alt="Portfolio" />
+          <img src="./public/Portfolio.svg" alt="Portfolio icon" />
           <span>Portfolio</span>
         </a>
         <a href="book.html" class="nav-link" title="Book">
-          <img src="./public/Bookings.svg" alt="Bookings" />
+          <img src="./public/Bookings.svg" alt="Bookings icon" />
           <span>Book</span>
         </a>
       </nav>

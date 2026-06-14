@@ -1,2 +1,23 @@
-User-agents: GPTBot
+# Block OpenAI GPTBot from scraping your site content[cite: 11]
+User-agent: GPTBot
 Disallow: /
+
+# Block other common AI web scrapers
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: Anthropic-ai
+Disallow: /
+
+# Global rules for standard search engines (Googlebot, Bingbot, etc.)
+User-agent: *
+Allow: /
+
+# Prevent search engines from indexing your secret admin page[cite: 3]
+Disallow: /admin.html
+
+# Link to your XML sitemap
+Sitemap: https://flynewwings.me/sitemap.xml
