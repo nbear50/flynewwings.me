@@ -36,7 +36,7 @@
 
       /* Hero Section */
       .hero-full {
-        align-items: flex-end;
+        align-items: center;
         height: min(85vh, 900px);
         position: relative;
       }
@@ -70,9 +70,9 @@
         opacity: 0;
       }
       .hero-content {
-        position: relative;
+        position: absolute;
+        bottom: 0px;
         z-index: 3;
-        padding-bottom: 60px;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -106,10 +106,10 @@
 
       /* Home Photos Feature */
       .home-feature-container {
-        max-width: 1400px;
+        max-width: 1500px;
         width: 100%;
-        margin: -40px auto 80px;
-        padding: 0 40px;
+        margin: 50px auto 80px;
+        padding: 0 20px;
         box-sizing: border-box;
         position: relative;
         z-index: 5;
@@ -185,6 +185,7 @@
         font-weight: bold;
         font-size: 1.35rem;
       }
+      .mobile-break { display: none; }
 
       /* Home Photos Pricing */
       .home-pricing-section {
@@ -260,7 +261,9 @@
         flex: 1.2;
         position: relative;
         height: 550px;
+        width: 100%;
         cursor: pointer;
+        display: block;
       }
       .group-img-main, .group-img-secondary {
         position: absolute;
@@ -337,7 +340,7 @@
       }
       .other-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
       }
       .other-card {
@@ -387,7 +390,18 @@
         box-shadow: 0 15px 40px rgba(235, 37, 96, 0.5);
       }
 
-      /* Massive Sticky Bottom Nav Book Button Override */
+      .scroll-bridge .chevron-group {
+        transform: translateY(80px); 
+      }
+
+      /* Adjust the drop distance for mobile screens */
+      @media (max-width: 900px) {
+        .scroll-bridge .chevron-group {
+          transform: translateY(50px);
+        }
+      }
+
+      /* Massive Sticky Bottom Nav Book Button Override (Restored anchors) */
       .bottom-nav {
         display: flex;
         align-items: center;
@@ -395,6 +409,23 @@
         padding: 10px 10px 10px 20px;
         width: min(500px, calc(100% - 40px));
         gap: 20px;
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%) translateY(150%);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 40px;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        box-shadow: 0 10px 40px rgba(101, 189, 241, 0.15);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+        z-index: 1000;
+      }
+      .bottom-nav.scroll-active {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
       }
       .nav-icons-container {
         display: flex;
@@ -413,7 +444,7 @@
         background: transparent;
       }
       .nav-link:hover {
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.15);
       }
       .nav-link img {
         width: 28px;
@@ -437,7 +468,7 @@
         font-family: var(--font-prosto-one);
         font-size: 1.3rem;
         text-align: center;
-        padding: 18px 24px;
+        padding: 16px 24px;
         border-radius: 30px;
         transition: all 0.3s ease;
         box-shadow: 0 8px 25px rgba(29, 78, 216, 0.4);
@@ -447,47 +478,85 @@
         box-shadow: 0 12px 35px rgba(235, 37, 96, 0.6);
       }
 
+      /* Media Queries */
       @media (max-width: 1024px) {
         .home-feature-top { flex-direction: column; padding: 40px; }
         .home-feature-visual { width: 100%; }
         .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-        .group-feature-wrapper { flex-direction: column-reverse; gap: 40px; }
-        .group-visual-composition { width: 100%; height: 500px; }
-      }
-
-      @media (max-width: 900px) {
-        .bottom-nav {
-          padding: 10px;
-          width: calc(100% - 20px);
-          gap: 10px;
-        }
-        .nav-icons-container {
-          gap: 8px;
-        }
-        .nav-link {
-          padding: 6px 8px;
-        }
-        .nav-link img {
-          width: 24px;
-          height: 24px;
-        }
-        .nav-link span {
-          font-size: 0.8rem;
-        }
-        .nav-book-massive {
-          font-size: 1.1rem;
-          padding: 14px 16px;
-        }
+        .group-feature-wrapper { flex-direction: column; gap: 40px; }
+        .group-visual-composition { width: 100%; height: 500px; margin: 20px auto 40px; }
+        .group-img-main { height: 350px; width: 80%; top: 20px; }
+        .group-img-secondary { height: 300px; width: 75%; bottom: 20px; }
       }
 
       @media (max-width: 768px) {
         .home-feature-container, .group-feature-container, .other-projects-section { padding: 0 20px; }
         .home-pricing-section { padding: 30px 20px; }
-        .group-visual-composition { height: 400px; }
-        .group-img-main { height: 300px; width: 85%; }
-        .group-img-secondary { height: 250px; width: 80%; }
-        .other-grid { grid-template-columns: 1fr; }
+        
+        /* Mobile Break for Promo Bar */
+        .mobile-break { display: block; margin-bottom: 6px; }
         .home-promo-bar { padding: 15px 20px; font-size: 1.1rem; }
+        .home-promo-bar strong { margin-right: 0; display: inline-block; margin-bottom: 4px; }
+
+        /* Lock Group Composition Bounds for Mobile strictly */
+        .group-visual-composition { 
+          height: 480px; 
+          min-height: 480px;
+          width: 100%; 
+          max-width: 450px; 
+          margin: 40px auto 60px; 
+        }
+        .group-img-main { height: 260px; width: 85%; top: 30px; left: 0; }
+        .group-img-secondary { height: 220px; width: 80%; bottom: 30px; right: 0; }
+        
+        /* Softer mobile animation bounds so it doesn't leave the block */
+        .group-visual-composition:hover .group-img-secondary,
+        .group-visual-composition.active-tap .group-img-secondary {
+          transform: rotate(-4deg) translate(-10px, -10px) scale(1.02);
+        }
+        
+        .other-grid { grid-template-columns: 1fr; }
+
+        /* Shrunk Nav Bottom Bar for Mobile */
+        .bottom-nav {
+          padding: 6px 8px 6px 14px;
+          width: calc(100% - 32px);
+          gap: 10px;
+          bottom: 16px; 
+        }
+        .nav-icons-container {
+          gap: 4px;
+        }
+        .nav-link {
+          padding: 6px 8px;
+        }
+        .nav-link img {
+          width: 22px;
+          height: 22px;
+          margin-bottom: 2px;
+        }
+        .nav-link span {
+          font-size: 0.75rem;
+        }
+        .nav-book-massive {
+          font-size: 1.05rem;
+          padding: 10px 14px; 
+        }
+        .hero-content {
+          bottom: -80px;
+        }
+        .home-feature-top {
+          padding: 30px 30px;
+        }
+        .home-feature-title {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .group-visual-composition { height: 400px; min-height: 400px; margin: 30px auto 40px; }
+        .group-img-main { height: 210px; width: 85%; top: 20px; }
+        .group-img-secondary { height: 180px; width: 85%; bottom: 20px; }
       }
     </style>
   </head>
@@ -528,13 +597,24 @@
       <div class="page-content-personal">
 
         <div class="hero-full">
-          <img class="hero-poster" src="./public/Services/home.webp" alt="Aerial home photo" loading="eager" />
-          <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/home/home.mp4" autoplay loop muted playsinline></video>
+          <img class="hero-poster" src="./public/tree.webp" alt="Aerial home photo" loading="eager" />
+          <video class="hero-video-bg" src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/group/group.mp4" autoplay loop muted playsinline></video>
           <div class="hero-content">
             <div class="hero-text-block">
               <h1 class="hero-title">Personal Projects</h1>
-              <p class="hero-subtitle">The custom photography projects I love to take on. Beautiful home property shots, large group photos, and everything in between.</p>
+              <p class="hero-subtitle">Get a home photoshoot for 25$ today</p>
             </div>
+          </div>
+        </div>
+
+        <div class="scroll-bridge">
+          <div class="chevron-group">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </div>
         </div>
 
@@ -545,7 +625,7 @@
                 <h2 class="home-feature-title">Home Photos</h2>
                 <p class="home-feature-desc">I will come directly to your property to capture stunning aerial photographs from angles you rarely get to see. After the shoot, I handle all the professional editing to ensure the lighting and colors look incredible. You can receive the final digital files, a high-quality physical print, or a fully framed piece ready to hang.</p>
                 <div style="text-align: center; margin-top: 20px;">
-                  <a href="book.html" class="cta-gradient">Book a Home Shoot</a>
+                  <a href="book.html" class="cta-gradient">Now Only 40$</a>
                 </div>
               </div>
               <div class="home-feature-visual">
@@ -554,12 +634,12 @@
             </div>
 
             <div class="home-promo-bar">
-              <strong>ON SALE NOW</strong> Home Photos for <span class="highlight">$50</span> &nbsp;|&nbsp; Only <span class="highlight">$25</span> if you refer someone
+              <strong>ON SALE NOW</strong> <br class="mobile-break"><span class="promo-text">Home Photos for <span class="highlight">$40</span> &nbsp;|&nbsp; Only <span class="highlight">$25</span> if you refer someone</span>
             </div>
             
             <div class="home-pricing-section">
-              <h3 class="pricing-header">Framing Pricing</h3>
-              <p class="pricing-sub">Get your edited home photo framed and ready for the wall.</p>
+              <h3 class="pricing-header">Frame It!</h3>
+              <p class="pricing-sub">Get your edited home photo printed and framed in a size of your choice</p>
               <div class="pricing-grid">
                 <div class="price-card">
                   <span class="price-size">6x8</span>
@@ -578,51 +658,47 @@
                   <div class="price-cost">$60</div>
                 </div>
               </div>
-              <p class="pricing-footer">Other sizes available upon request.</p>
+              <p class="pricing-footer">Other sizes available upon request</p>
             </div>
           </div>
         </div>
 
         <div class="group-feature-container">
           <div class="group-feature-wrapper">
+            <div class="group-feature-text">
+              <h2 class="group-title">Group Photos</h2>
+              <p class="group-desc">Fitting a massive group of people into a single frame from the ground is always a challenge. By putting a drone in the air, I capture the entire group with perfect clarity and keep the background in the shot.</p>
+              <p class="group-desc">Whether it is an entire sports team, an extended family reunion, or a massive club, I will coordinate the shot and make sure everyone is looking their best.</p>
+              <div style="text-align: center;">
+                <a href="book.html" class="cta-gradient" style="background: linear-gradient(135deg, #1d4ed8 0%, #65bdf1 100%);">Photograph your Group</a>
+              </div>
+            </div>
             <div class="group-visual-composition" id="groupComposition">
               <img src="./public/Services/group.webp" alt="Large group posing for drone shot" class="group-img-main">
               <img src="./public/flagball.webp" alt="Action shot showing depth" class="group-img-secondary">
-            </div>
-            <div class="group-feature-text">
-              <h2 class="group-title">Group Photos</h2>
-              <p class="group-desc">Fitting a massive group of people into a single frame from the ground is always a challenge. Someone is always hidden in the back, or the scenery gets cut out. By putting a drone in the air, I capture the entire group with perfect clarity while keeping the background in the shot.</p>
-              <p class="group-desc">Whether it is an entire sports team, an extended family reunion, or a massive club, I will coordinate the shot and make sure everyone is looking their best.</p>
-              <div style="text-align: center;">
-                <a href="book.html" class="cta-gradient" style="background: linear-gradient(135deg, #1d4ed8 0%, #65bdf1 100%);">Schedule a Group Shot</a>
-              </div>
             </div>
           </div>
         </div>
 
         <div class="other-projects-section">
-          <h3 class="other-title">Other Stuff I Shoot</h3>
-          <p class="other-desc">Home and group photos are highly requested, but I take on all types of personal photography.</p>
+          <h3 class="other-title">The List Goes On...</h3>
+          <p class="other-desc">Home and group photos are popular, but I take on all types of personal photography.</p>
           <div class="other-grid">
             <div class="other-card">
-              <img src="./public/Services/comericalFULL.webp" alt="Pet drone photography">
-              <p>Got a dog that deserves top-tier photography? I will track the action and get you an incredible action shot.</p>
+              <img src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/windsor.jpg" alt="Pet drone photography">
+              <p>Need a shot of a landmark or building? I will do everything I can to set you up, who knows I might already have the photo in my library.</p>
             </div>
             <div class="other-card">
-              <img src="./public/edge.webp" alt="Automotive and vehicle drone photography">
-              <p>If you are proud of your car, truck, or bike, I will shoot it exactly how it deserves to be seen.</p>
-            </div>
-            <div class="other-card">
-              <img src="./public/Services/event.webp" alt="Scenery drone photography">
-              <p>Sometimes I just fly to capture beautiful lighting. Let me know if you have a special location in mind.</p>
+              <img src="https://pub-3c3a4139956249b39ac97712593663e4.r2.dev/Portfolio/combine.jpg" alt="Automotive and vehicle drone photography">
+              <p>If you are proud of your car, truck, or bike, I can get some killer shots driving around or in the driveway.</p>
             </div>
           </div>
         </div>
 
       </div>
 
-      <div class="service-area-section" style="text-align: center; padding: 40px 20px; color: var(--color-text-muted); font-family: var(--font-judson);">
-        <h3 style="font-family: var(--font-prosto-one); color: var(--color-lightskyblue); margin-bottom: 15px;">Areas Served</h3>
+      <div class="service-area-section" style="text-align: center; padding: 0px 20px; color: var(--color-text-muted); font-family: var(--font-judson); margin-bottom: -50px;">
+        <h3 style="font-family: var(--font-prosto-one); color: var(--color-lightskyblue); margin-bottom: 15px; margin-top: -140px;">Areas Served</h3>
         <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
           I typically provide services to the Kokomo, Lafayette, Indianapolis, and surrounding areas. If you are curious, just ask. I love to travel and would be happy to discuss options.
         </p>

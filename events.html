@@ -60,21 +60,24 @@
       .hero-full {
         align-items: flex-end;
         height: min(90vh, 1000px);
+        position: relative;
       }
       .hero-video-bg {
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
       }
       .hero-poster {
-        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
       }
       .hero-content {
-        padding-bottom: 60px;
+        padding-bottom: 120px;
         width: 100%;
         display: flex;
         justify-content: center;
         box-sizing: border-box;
+        position: relative;
+        z-index: 5;
       }
       .hero-text-block {
         text-align: center;
@@ -108,7 +111,7 @@
       .event-showcase-container {
         max-width: 1600px;
         width: 100%;
-        margin: -20px auto 60px;
+        margin: 0 auto 60px;
         padding: 0 60px;
         box-sizing: border-box;
         position: relative;
@@ -287,7 +290,11 @@
         .event-text { max-width: 100%; }
         .event-visual { width: 100%; height: 350px; }
         .hero-title { font-size: clamp(3rem, 12vw, 4.5rem); }
-        .hero-content { padding-bottom: 40px; }
+        .hero-content { padding-bottom: 80px; }
+        .scroll-bridge { height: 100px; margin-top: -90px; margin-bottom: 20px; }
+        .glow-line { height: 50px; }
+        .chevron-group svg { width: 24px; height: 24px; }
+        .chevron-group svg:nth-child(2) { margin-top: -12px; }
         
         /* Nav tweaks for smaller screens */
         .bottom-nav {
@@ -318,9 +325,6 @@
   </head>
 
   <body>
-    <!--  
-    <div class="construction-banner">🚧 Page Under Construction 🚧</div>
-    -->
 
     <div class="top-nav-wrapper">
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
@@ -366,8 +370,19 @@
           <div class="hero-content">
             <div class="hero-text-block">
               <h1 class="hero-title">Events</h1>
-              <p class="hero-subtitle">A regular camera can't show how big your event actually is. I fly a drone over it so you get the whole picture. The whole crowd, the real energy, and maybe even a sick sunset.</p>
+              <p class="hero-subtitle">Capture events like never before</p>
             </div>
+          </div>
+        </div>
+
+        <div class="scroll-bridge">
+          <div class="chevron-group">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </div>
         </div>
 
@@ -395,7 +410,7 @@
           <div class="event-row">
             <div class="event-text">
               <h2 class="event-title">Action Sports</h2>
-<p class="event-desc"> Sports move fast and it's hard to keep up from the sidelines. I fly FPV next to the action so you get shots a normal camera on the ground will never get. I can record up to <strong style="color: rgb(240, 122, 20);"><em>2 Consecutive Hours</em></strong> of footage from any angle.</p>
+              <p class="event-desc"> Sports move fast and it's hard to keep up from the sidelines. I fly FPV next to the action so you get shots a normal camera on the ground will never get. I can record up to <strong style="color: rgb(240, 122, 20);"><em>2 Consecutive Hours</em></strong> of footage from any angle.</p>
             </div>
             <div class="event-visual">
               <img src="public\flagball.webp" alt="High speed sports drone shot">
@@ -411,7 +426,6 @@
               <img src="public\Services\comericalFULL.webp" alt="Private party drone shot">
             </div>
           </div>
-
         </div>
 
         <div class="pricing-banner-wrapper">
@@ -419,7 +433,7 @@
             <h3>Pricing</h3>
             <p><strong>$130/hour</strong> of Flight Time</p>
             <p><strong>$50/hour</strong> of Grading and Editing</p>
-            <div style="margin-top: 40px;">
+            <div style="margin-top: 40px; margin-left: 10px; margin-right: 10px;">
               <a href="book.html" class="cta-gradient">Secure Your Event Date</a>
             </div>
           </div>
@@ -427,11 +441,10 @@
 
       </div>
 
-
-      <div class="service-area-section" style="text-align: center; padding: 40px 20px; color: var(--color-text-muted); font-family: var(--font-judson);">
-        <h3 style="font-family: var(--font-prosto-one); color: var(--color-lightskyblue); margin-bottom: 15px;">Areas Served</h3>
+      <div class="service-area-section" style="text-align: center; padding: 0px 20px; color: var(--color-text-muted); font-family: var(--font-judson); margin-bottom: -50px;">
+        <h3 style="font-family: var(--font-prosto-one); color: var(--color-lightskyblue); margin-bottom: 15px; margin-top: -140px;">Areas Served</h3>
         <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-          I typically provide services to the Kokomo, Lafayette, Indianapolis, and surrounding areas. If you are curious, just ask! I love to travel and would be happy to discuss options.
+          I typically provide services to the Kokomo, Lafayette, Indianapolis, and surrounding areas. If you are curious, just ask. I love to travel and would be happy to discuss options.
         </p>
       </div>
 
